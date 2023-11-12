@@ -1,54 +1,17 @@
-import { useReducer, useState } from "react";
+import { useState } from "react";
 import { ArtistCreationForm } from "../components/ArtistCreationForm";
 import { ArtistTable } from "../components/ArtistTable";
-import { search } from "../utils/utils";
-
-const SEARCH_STATUS = {
-  INITIAL: "INITIAL",
-  LOADING: "LOADING",
-  HAS_RESULTS: "HAS_RESULTS",
-  HAS_ERRORS: "HAS_ERRORS",
-};
-
-const ACTIONS = {
-  SEARCH: "SEARCH",
-  CLEAR: "CLEAR",
-  RESULT: "RESULT",
-  ERROR: "ERROR",
-};
-
-const INITIAL_SEARCH_STATE = {
-  status: SEARCH_STATUS.INITIAL,
-  results: [],
-  error: undefined,
-};
-function searchReducer(status, action) {
-  switch (action.type) {
-    case ACTIONS.SEARCH:
-      return { error: undefined, results: [], status: SEARCH_STATUS.LOADING };
-    case ACTIONS.CLEAR:
-      return { error: undefined, results: [], status: SEARCH_STATUS.INITIAL };
-    case ACTIONS.RESULT:
-      return {
-        error: undefined,
-        results: action.results,
-        status: SEARCH_STATUS.HAS_RESULTS,
-      };
-    case ACTIONS.ERROR:
-      return {
-        error: action.error,
-        results: [],
-        status: SEARCH_STATUS.HAS_ERRORS,
-      };
-  }
-}
+import {
+  useSearchParams,
+  useLoaderData,
+  useNavigation,
+} from "react-router-dom";
 
 export function Search() {
-  const [{ status, results, error }, dispatch] = useReducer(
-    searchReducer,
-    INITIAL_SEARCH_STATE
-  );
+  let [searchParams, setSearchParams] = useSearchParams();
+  const artists = useLoaderData();
   const [creating, setCreating] = useState(false);
+  const { state } = useNavigation();
 
   return (
     <>
@@ -63,33 +26,23 @@ export function Search() {
           Search an artist
           <input
             type="text"
+            defaultValue={searchParams.get("query") ?? ""}
             onChange={(e) => {
               const value = e.target.value;
-              if (value?.length > 1) {
-                dispatch({ type: ACTIONS.SEARCH });
-                search(value)
-                  .then((res) => {
-                    dispatch({ type: ACTIONS.RESULT, results: res });
-                  })
-                  .catch((err) => {
-                    dispatch({ type: ACTIONS.ERROR, error: err });
-                  });
-              } else {
-                dispatch({ type: ACTIONS.CLEAR });
-              }
+              searchParams.set("query", value);
+              setSearchParams(searchParams);
             }}
           />
         </label>
       </div>
+      {state === "loading" ? (
+        <span className="loader" />
+      ) : artists.length > 0 ? (
+        <ArtistTable artists={artists} />
+      ) : (
+        "No results to display yet"
+      )}
 
-      {status === SEARCH_STATUS.HAS_ERRORS && (
-        <span className="error">{error?.message ?? "An error occured"}</span>
-      )}
-      {status === SEARCH_STATUS.HAS_RESULTS && (
-        <ArtistTable artists={results} />
-      )}
-      {status === SEARCH_STATUS.INITIAL && "No results to display yet"}
-      {status === SEARCH_STATUS.LOADING && <span className="loader" />}
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <button onClick={() => setCreating(true)}>Add an artist</button>
       </div>

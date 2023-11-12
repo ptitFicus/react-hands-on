@@ -4,11 +4,19 @@ import { Search } from "./pages/Search";
 import { Artist } from "./pages/Artist";
 import { useEffect, useState } from "react";
 import { FavoriteContext } from "./FavoriteContext";
+import { search } from "./utils/utils";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Search />,
+    loader: async ({ request }) => {
+      const url = new URL(request.url);
+      const query = url.searchParams.get("query");
+
+      console.log("query", query);
+      return search(query);
+    },
   },
   { path: "/artist/:artistId", element: <Artist /> },
 ]);
