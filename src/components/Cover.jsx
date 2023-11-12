@@ -9,7 +9,6 @@ export function Cover({ artist, album, size }) {
   }, [artist, album, size]);
   const { favorites, addFavorite, removeFavorite } =
     useContext(FavoriteContext);
-  console.log("cover favorties", favorites);
   const isFavorite = Boolean(
     favorites.find(
       ({ artist: fartist, album: falbum }) =>

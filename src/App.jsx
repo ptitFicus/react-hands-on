@@ -14,7 +14,6 @@ const router = createBrowserRouter([
       const url = new URL(request.url);
       const query = url.searchParams.get("query");
 
-      console.log("query", query);
       return search(query);
     },
   },

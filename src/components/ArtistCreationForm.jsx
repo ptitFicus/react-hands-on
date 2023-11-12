@@ -10,7 +10,6 @@ export function ArtistCreationForm({ close }) {
       onSubmit={(e) => {
         e.preventDefault();
         setError("");
-        console.log("albums", e.target.albums);
         const artist = e.target.artist.value;
         const albums = e.target.albums.value
           ?.split("\n")
