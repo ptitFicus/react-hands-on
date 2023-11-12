@@ -1,7 +1,7 @@
 import { useReducer, useState } from "react";
-import { add, search } from "../utils/utils";
+import { ArtistCreationForm } from "../components/ArtistCreationForm";
 import { ArtistTable } from "../components/ArtistTable";
-import { func } from "prop-types";
+import { search } from "../utils/utils";
 
 const SEARCH_STATUS = {
   INITIAL: "INITIAL",
@@ -97,41 +97,3 @@ export function Search() {
     </>
   );
 }
-
-function ArtistCreationForm({ close }) {
-  const [error, setError] = useState("");
-  return (
-    <form
-      style={{ display: "flex", flexDirection: "column" }}
-      onSubmit={(e) => {
-        e.preventDefault();
-        setError("");
-        console.log("albums", e.target.albums);
-        const artist = e.target.artist.value;
-        const albums = e.target.albums.value
-          ?.split("\n")
-          .filter((s) => s !== "");
-        add(artist, albums)
-          .then(() => close())
-          .catch((err) => setError(err));
-      }}
-    >
-      <label>
-        Name
-        <input type="text" name="artist" />
-      </label>
-      <label>
-        Albums (one per line)
-        <textarea name="albums" />
-      </label>
-      {error && (
-        <div className="error">{error?.message ?? JSON.stringify(error)}</div>
-      )}
-      <button onClick={() => close()}>Cancel</button>
-      <button type="submit">Add artist</button>
-    </form>
-  );
-}
-ArtistCreationForm.propTypes = {
-  close: func,
-};
