@@ -1,4 +1,4 @@
-import { string, arrayOf, shape, number } from "prop-types";
+import { string, arrayOf, shape } from "prop-types";
 import { Link } from "react-router-dom";
 import { Cover } from "../components/Cover";
 
@@ -15,17 +15,19 @@ export function ArtistTable({ artists }) {
         </thead>
         <tbody>
           {artists.map((a) => (
-            <tr key={a.id}>
+            <tr key={a.name}>
               <th>
-                <Link to={`/artist/${a.id}`}>{a.name}</Link>
+                <Link to={`/artist/${encodeURIComponent(a.name)}`}>
+                  {a.name}
+                </Link>
               </th>
               <td>{a.albums.length}</td>
               <td>
-                {a.albums.map(({ Title }) => (
+                {a.albums.map((title) => (
                   <Cover
-                    key={`${a.id}-${Title}`}
+                    key={`${a.name}-${title}`}
                     artist={a.name}
-                    album={Title}
+                    album={title}
                     size="small"
                   />
                 ))}
@@ -41,12 +43,7 @@ ArtistTable.propTypes = {
   artists: arrayOf(
     shape({
       name: string.isRequired,
-      id: number.isRequired,
-      albums: arrayOf(
-        shape({
-          Title: string.isRequired,
-        })
-      ),
+      albums: arrayOf(string),
     })
   ).isRequired,
 };

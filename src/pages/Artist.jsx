@@ -5,8 +5,8 @@ import { Cover } from "../components/Cover";
 
 export function Artist() {
   let { artistId } = useParams();
-  const numberId = Number(artistId);
-  const artist = artistsWithAlbums.find(({ id }) => id === numberId);
+  const decoded = decodeURIComponent(artistId);
+  const artist = artistsWithAlbums.find(({ name }) => name === decoded);
 
   return (
     <>
@@ -18,12 +18,12 @@ export function Artist() {
           flexWrap: "wrap",
         }}
       >
-        {artist.albums.map(({ Title }) => (
-          <div key={Title}>
-            <h2>{Title}</h2>
+        {artist.albums.map((title) => (
+          <div key={title}>
+            <h2>{title}</h2>
             <Cover
-              key={Title}
-              album={Title}
+              key={title}
+              album={title}
               artist={artist.name}
               size="medium"
             />
