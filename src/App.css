@@ -60,3 +60,16 @@
 .star.active::before {
   background-color: orange;
 }
+
+header {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+header nav {
+  margin-bottom: 0;
+}
+
+main {
+  padding-top: 1rem;
+}
