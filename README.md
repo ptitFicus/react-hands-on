@@ -9,6 +9,20 @@ npm run dev
 
 ## Les étapes
 
+### Etape 0
+
+Afficher un menu avec un tableau d'artistes (uniquement les données du fichier Artist.json) à  l'aide de JS.
+
+Bonus :
+
+- Afficher le nombre d'albums réalisés par chaque artiste dans le tableau
+- Rendre le code de création du menu, et du tableau plus générique
+
+Points vu dans cette étape :
+
+- C'est fastidieux
+
+
 ### Étape 1
 
 Passer d'un tableau d'artiste HTML / JS à un composant ArtistTable en JSX.
