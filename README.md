@@ -85,10 +85,20 @@ Points vus dans cette étape :
 
 Avoir un menu simple, qui reste le même quel que soit la page.
 
-Le menu permettra aussi le passage en dark theme, le theme étant stocké dans le contexte.
+Points vus dans cette étape :
+
+- Prise en compte d'un layout global avec react router
+
+C'est très teinté react-router, à voir si on veut vraiment faire ça ou faire un layout "à la mano".
+
+## Étape 8 favoris
+
+Autoriser la sauvegarde d'albums favoris.
+
+Développer une page listant ces favoris, à ajouter en header au layout global.
+
+Les favoris seront matérialisés par de petites étoiles sur les pochettes, ce sera l'occasion de parler du "props drilling" et de montrer une solution plus "simple" à base de contexte (les favoris ainsi que les méthodes pour en ajouter / retirer seraient dans le contexte).
 
 Points vus dans cette étape :
 
-- Imbrication de composant
-- Positionnement du router dans un layout applicatif
-- Contexte
+- Le contexte
