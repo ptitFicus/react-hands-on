@@ -1,0 +1,75 @@
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #3e3e3e;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .star {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .star::before {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    content: "";
+    background-color: grey;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    display: inline-block;
+    height: 30%;
+    width: 30%;
+    max-width: 50px;
+    max-height: 50px;
+  }
+  
+  .star:hover {
+    opacity: 50%;
+  }
+  
+  .star.active::before {
+    background-color: orange;
+  }
+  
+  header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  header nav {
+    margin-bottom: 0;
+  }
+  
+  main {
+    padding-top: 1rem;
+  }
