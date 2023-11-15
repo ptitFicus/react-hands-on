@@ -1,6 +1,7 @@
 import "react";
 import { useParams } from "react-router-dom";
 import { artistsWithAlbums } from "../utils/utils";
+import { Cover } from "../components/Cover";
 
 export function Artist() {
   let { artistId } = useParams();
@@ -20,7 +21,12 @@ export function Artist() {
         {artist.albums.map((title) => (
           <div key={title}>
             <h2>{title}</h2>
-           
+            <Cover
+              key={title}
+              album={title}
+              artist={artist.name}
+              size="medium"
+            />
           </div>
         ))}
       </div>

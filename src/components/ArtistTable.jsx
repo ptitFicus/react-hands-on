@@ -1,7 +1,7 @@
 import React from "react";
 import { string, arrayOf, shape } from "prop-types";
 import { Link } from "react-router-dom";
-
+import { Cover } from "./Cover";
 
 
 export const ArtistTable = ({ artists }) => {
@@ -25,7 +25,12 @@ export const ArtistTable = ({ artists }) => {
                     <td>
                         <ul>
                             {a.albums.map((title) => (
-                                <li key={title}>{title}</li>
+                                <Cover
+                                    key={`${a.name}-${title}`}
+                                    artist={a.name}
+                                    album={title}
+                                    size="small"
+                                />
                             ))}
                         </ul>
                     </td>
