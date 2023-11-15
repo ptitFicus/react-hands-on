@@ -35,7 +35,24 @@ Points vus dans cette étape :
 - Parcours de tableau pour générer un bout de JSX par élément
 - Affichage conditionnel (si 0 albums on veut afficher le texte "No albums" au lieu de 0)
 
-### Étape 2
+### Etape 2
+
+Filtre sur le tableau
+Composant de la vue d'un seul artiste.
+
+On veut le nom du groupe + les noms des albums
+
+Points vus dans cette étape :
+
+- Utilisation du state
+- affichage conditionnel
+
+Bonus :
+
+- On n'affiche le bouton détails dans le tableau uniquement quand on a un filtre d'activé
+
+
+### Étape 2 bis
 
 Composant de la vue d'un seul artiste.
 

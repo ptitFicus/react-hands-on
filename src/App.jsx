@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 import logo from './assets/logo.jpg'
 import { ArtistTable } from "./components/ArtistTable";
+import { ArtistDetail } from "./components/ArtistDetail";
+import { artistsWithAlbums } from './utils/utils.js';
 
 export const App = () => {
+
+    const [artist, setArtist] = useState();
+
+    const [filter, setFilter] = useState();
+
     return <>
         <header>
             <nav>
@@ -21,7 +28,12 @@ export const App = () => {
             </nav>
         </header>
         <main>
-            <ArtistTable />
+            {artist && <ArtistDetail artist={artist} />}
+            <input placeholder="Filtrez" onChange={e => {
+                setFilter(e.target.value);
+            }} />
+            <ArtistTable artists={filter && artistsWithAlbums.filter(a => a.name.startsWith(filter)) || artistsWithAlbums} onArtistSelection={value => setArtist(value)}/>
+            
         </main>
     </>
 }
