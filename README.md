@@ -54,7 +54,7 @@ Bonus :
 
 ### Étape 2 bis
 
-Composant de la vue d'un seul artiste.
+Composant de la vue d'un seul artiste sur une page séparée
 
 On veut le nom du groupe + les noms des albums
 
