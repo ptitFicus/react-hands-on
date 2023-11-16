@@ -1,4 +1,5 @@
-import { ArtistTable } from "../components/ArtistTable";
+import { useState } from "react";
+
 import {
   useSearchParams,
   useLoaderData,
@@ -6,11 +7,14 @@ import {
 } from "react-router-dom";
 
 
+import { ArtistTable } from "../components/ArtistTable";
+import { ArtistCreationForm } from "../components/ArtistCreationForm";
 
 export function Search() {
   let [searchParams, setSearchParams] = useSearchParams();
-  const { state } = useNavigation();
   const artists = useLoaderData();
+  const [creating, setCreating] = useState(false);
+  const { state } = useNavigation();
 
   return (
     <section>
@@ -43,7 +47,13 @@ export function Search() {
           ) : (
             "No results to display yet"
           )} 
-        
+        {creating ? (
+            <ArtistCreationForm close={() => setCreating(false)} />
+          ) : (
+            <div>
+              <button onClick={() => setCreating(true)}>Add an artist</button>
+            </div>
+          )}
 
         </div>
       </section>
