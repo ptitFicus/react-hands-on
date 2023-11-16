@@ -1,51 +1,21 @@
 import { ArtistTable } from "../components/ArtistTable";
-import {
-  useSearchParams,
-  useLoaderData,
-  useNavigation,
-} from "react-router-dom";
 
+import { artistsWithAlbums } from "../utils/utils"; 
 
 
 export function Search() {
-  let [searchParams, setSearchParams] = useSearchParams();
-  const { state } = useNavigation();
-  const artists = useLoaderData();
 
   return (
     <section>
-        <div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <h1>
-              Search an artist
-              <input
-                type="text"
-                placeholder="aerosmith"
-                defaultValue={searchParams.get("query") ?? ""}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  searchParams.set("query", value);
-                  setSearchParams(searchParams);
-                }}
-              />
-            </h1>
-          </div>
-          {state === "loading" ? (
-            <span className="loader" />
-          ) : artists.length > 0 ? (
-            <ArtistTable artists={artists} />
-          ) : (
-            "No results to display yet"
-          )} 
-        
-
-        </div>
-      </section>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <ArtistTable artists={artistsWithAlbums} />
+      </div>
+    </section>
   );
 }
