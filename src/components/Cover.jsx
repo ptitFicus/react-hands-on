@@ -1,11 +1,11 @@
-import { useState, useEffect, useContext } from "react";
-import { string, oneOf } from "prop-types";
+import { useState, useEffect } from "react";
+import { string } from "prop-types";
 
-export function Cover({ artist, album, size }) {
+export function Cover({ artist, album }) {
     const [url, setUrl] = useState(undefined);
     useEffect(() => {
-        albumArt(artist, { album: album, size: size }).then((url) => setUrl(url));
-    }, [artist, album, size]);
+        albumArt(artist, { album: album }).then((url) => setUrl(url));
+    }, [artist, album]);
 
     return url ? (
                     <img src={url} title={album} />
@@ -15,6 +15,5 @@ export function Cover({ artist, album, size }) {
 }
 Cover.propTypes = {
     artist: string.isRequired,
-    album: string.isRequired,
-    size: oneOf(["small", "medium"]).isRequired,
+    album: string.isRequired
 };

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ArtistTable } from "../components/ArtistTable";
 import {
   useSearchParams,

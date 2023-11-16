@@ -25,12 +25,7 @@ export const ArtistTable = ({ artists }) => {
                     <td>
                         <ul>
                             {a.albums.map((title) => (
-                                <Cover
-                                    key={`${a.name}-${title}`}
-                                    artist={a.name}
-                                    album={title}
-                                    size="small"
-                                />
+                                <li>{title}</li>
                             ))}
                         </ul>
                     </td>

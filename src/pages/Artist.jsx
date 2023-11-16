@@ -25,7 +25,6 @@ export function Artist() {
               key={title}
               album={title}
               artist={artist.name}
-              size="medium"
             />
           </div>
         ))}
