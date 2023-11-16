@@ -25,3 +25,7 @@ const App = () => {
 # Etape 1
 
 Réaliser le même tableau que précédemment à l'aide de React.
+
+## Bonus
+
+Rendre le tableau indépendant de la constante `artistsWithAlbums`.
