@@ -72,3 +72,10 @@ document.getElementsByTagName('p')[0].className = 'mes-paragraphes'
 # Etape 0
 
 A l'aide du tableau `artistsWithAlbum` du fichier `utils.js`, créer une page qui crée un tableau comprenant tous les artistes, et pour chaque artiste la liste de ses albums.
+
+## Bonus
+
+Créer une fonction qui fait un tableau et qui prend en paramètres un tableau de données, et les colonnes du tableau.
+
+- [destructuration de tableaux](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- parcours de tableaux
