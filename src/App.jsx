@@ -14,13 +14,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Search />,
-                loader: async ({ request }) => {
-                    const url = new URL(request.url);
-                    const query = url.searchParams.get("query");
-
-                    return search(query);
-                },
+                element: <Search />
             },
             { path: "/artist/:artistId", element: <Artist /> }
         ],
