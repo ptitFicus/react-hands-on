@@ -35,7 +35,7 @@ Le HyperText Markup Language, généralement abrégé HTML ou, dans sa dernière
 
 Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique qui décrit la présentation des documents HTML et XML.
 
-```CSS
+```css
 p {
     color: red;
 }
@@ -50,7 +50,7 @@ p {
 
 JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.
 
-```JavaScript
+```js
 
 let str = 'Hello'
 if (str.startsWith('H')) {
@@ -63,7 +63,7 @@ if (str.startsWith('H')) {
 
 Le Document Object Model (DOM) est une interface de programmation normalisée par le W3C, qui permet à des scripts d'examiner et de modifier le contenu du navigateur web1.
 
-```JavaScript
+```js
 document.getElementById('un-id').innerText = 'Un autre texte';
 document.getElementsByTagName('p')[0].className = 'mes-paragraphes'
 ```

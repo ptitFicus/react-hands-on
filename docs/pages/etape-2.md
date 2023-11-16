@@ -4,7 +4,7 @@
 
 Les composants React utilisent des props pour communiquer entre eux.  Chaque composant parent peut passer des informations à ses composants enfants en leur donnant des props. Les props vous rappellent peut-être les attributs HTML, mais vous pouvez y passer n’importe quelle valeur JavaScript, y compris des objets et des fonctions.
 
-```JSX
+```jsx
 function Avatar({ person, size }) {
   return (
     <img
@@ -50,11 +50,11 @@ export default function Profile() {
 
 useState est un Hook React qui ajoute une variable d’état dans votre composant.
 
-```JS
+```js
 const [state, setState] = useState(initialState);
 ```
 
-```
+```jsx
 export default function Form() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');

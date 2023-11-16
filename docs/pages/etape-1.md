@@ -10,7 +10,7 @@ Pour des questions d'optimisation de performances, React maintient un DOM virtue
 
 JSX (JavaScript Syntax Extension et parfois appelé JavaScript XML) est une extension React de la syntaxe du langage JavaScript qui permet de structurer le rendu des composants à l'aide d'une syntaxe familière à de nombreux développeurs. Il est similaire en apparence au HTML.
 
-```JSX
+```jsx
 const App = () => {
   return (
    <div>
