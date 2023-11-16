@@ -5,3 +5,4 @@
     * [Etape 3](./pages/etape-3.md)
     * [Etape 4](./pages/etape-4.md)
     * [Etape 5](./pages/etape-5.md)
+    * [Etape 6](./pages/etape-6.md)
