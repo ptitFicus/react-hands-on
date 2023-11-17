@@ -1,4 +1,3 @@
-import React from "react";
 import { string, arrayOf, shape } from "prop-types";
 import { Link } from "react-router-dom";
 import { Cover } from "./Cover";
