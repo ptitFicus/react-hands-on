@@ -40,3 +40,15 @@ export const artistsWithAlbums =
         const artistAlbums = albums.filter((al) => al.ArtistId === ArtistId);
         return { name: Name, albums: artistAlbums.map(({ Title }) => Title) };
       });
+
+export function fetchCoverImage(artist, album, size) {
+  if (
+    artist.toUpperCase() === "LED ZEPPELIN" &&
+    album.toUpperCase() === "PRESENCE"
+  ) {
+    return new Promise((resolve, reject) =>
+      reject(new Error(`Unknown album ${album} (${artist})`))
+    );
+  }
+  return albumArt(artist, { album: album, size: size ?? "large" });
+}
