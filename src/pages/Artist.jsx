@@ -5,7 +5,7 @@ import { artistsWithAlbums } from "../utils/utils";
 export function Artist() {
   let { artistId } = useParams();
   const decoded = decodeURIComponent(artistId);
-  const artist = artistsWithAlbums.find(({ name }) => name === decoded);
+  const artist = artistsWithAlbums().find(({ name }) => name === decoded);
 
   return (
     <>

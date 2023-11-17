@@ -1,10 +1,8 @@
 import { ArtistTable } from "../components/ArtistTable";
 
-import { artistsWithAlbums } from "../utils/utils"; 
-
+import { artistsWithAlbums } from "../utils/utils";
 
 export function Search() {
-
   return (
     <section>
       <div
@@ -14,7 +12,7 @@ export function Search() {
           alignItems: "center",
         }}
       >
-        <ArtistTable artists={artistsWithAlbums} />
+        <ArtistTable artists={artistsWithAlbums()} />
       </div>
     </section>
   );
