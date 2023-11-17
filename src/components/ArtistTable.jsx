@@ -5,12 +5,12 @@ export const ArtistTable = () => {
     <table>
       <thead>
         <tr>
-          <td>Artist ({artistsWithAlbums.length})</td>
+          <td>Artist ({artistsWithAlbums().length})</td>
           <td>Albums</td>
         </tr>
       </thead>
       <tbody>
-        {artistsWithAlbums?.map((artist) => (
+        {artistsWithAlbums()?.map((artist) => (
           <tr key={artist.name}>
             <td>{artist.name}</td>
             <td>{artist.albums.length ? artist.albums.length : "No Albums"}</td>
