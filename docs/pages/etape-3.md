@@ -83,7 +83,7 @@ const myComponent = ({ id }) => {
 };
 ```
 
-# Etape 3
+# Objectif
 
 Enrichir le composant de vue des artistes avec l'image de la pochette.
 
@@ -92,3 +92,7 @@ La fonction fetchCoverImage du fichiers utils/utils.js est à utiliser, elle s'a
 ```js
 fetchCoverImage("nom de l'artiste", "nom de l'album", "medium"); // le 3è paramètre peut-être small, large ou medium en fonction de la taille souhaitée
 ```
+
+## Bonus
+
+Gérer les erreurs lors de la récupération des images (sur la page de "Led Zeppelin", un des albums provoque une erreur).
