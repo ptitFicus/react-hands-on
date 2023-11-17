@@ -60,7 +60,7 @@ const makeTable = (data, columns = []) => {
 
 const main = document.createElement("main");
 
-main.appendChild(makeTable(artistsWithAlbums, ["name"]));
+main.appendChild(makeTable(artistsWithAlbums(), ["name"]));
 
 rootDiv.appendChild(makeHeader());
 rootDiv.appendChild(main);
