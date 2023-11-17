@@ -1,20 +1,24 @@
 import { useState, useEffect } from "react";
-import { string, oneOf } from "prop-types";
+import { string } from "prop-types";
+import { fetchCoverImage } from "../utils/utils";
 
-export function Cover({ artist, album, size }) {
-    const [url, setUrl] = useState(undefined);
-    useEffect(() => {
-        albumArt(artist, { album: album, size: size }).then((url) => setUrl(url));
-    }, [artist, album, size]);
+export function Cover({ artist, album }) {
+  const [url, setUrl] = useState(undefined);
+  const [error, setError] = useState();
+  useEffect(() => {
+    setError(undefined);
+    fetchCoverImage(artist, album, "medium")
+      .then((url) => setUrl(url))
+      .catch((err) => setError(err.message));
+  }, [artist, album]);
 
-    return url ? (
-                    <img src={url} title={album} />
-    ) : (
-        <span className="loader" />
-    );
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
+
+  return url ? <img src={url} title={album} /> : <span className="loader" />;
 }
 Cover.propTypes = {
-    artist: string.isRequired,
-    album: string.isRequired,
-    size: oneOf(["small", "medium"]).isRequired,
+  artist: string.isRequired,
+  album: string.isRequired,
 };
