@@ -6,7 +6,7 @@ import { Cover } from "../components/Cover";
 export function Artist() {
   let { artistId } = useParams();
   const decoded = decodeURIComponent(artistId);
-  const artist = artistsWithAlbums.find(({ name }) => name === decoded);
+  const artist = artistsWithAlbums().find(({ name }) => name === decoded);
 
   return (
     <>

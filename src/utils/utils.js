@@ -1,5 +1,3 @@
-import artists from "./data/Artist.json";
-import albums from "./data/Album.json";
 import withAlbums from "./data/data.json";
 
 export function search(text) {
@@ -8,7 +6,7 @@ export function search(text) {
     if (!text || text?.length === 0) {
       resolve([]);
     } else {
-      const res = artistsWithAlbums.filter(({ name }) =>
+      const res = artistsWithAlbums().filter(({ name }) =>
         name.toUpperCase().includes(upper)
       );
       setTimeout(() => {
@@ -18,17 +16,23 @@ export function search(text) {
   });
 }
 
+function readAddedData() {
+  const readed = localStorage.getItem("artists");
+  return readed ? JSON.parse(readed) : [];
+}
+
 export function add(artist, albums) {
   return new Promise((resolve, reject) => {
     if (
-      artistsWithAlbums.find(
+      artistsWithAlbums().find(
         ({ name }) => name.toUpperCase() === artist?.toUpperCase()
       )
     ) {
       reject(new Error("Artist already exist"));
     } else {
-      artistsWithAlbums.push({ name: artist, albums: albums });
-      localStorage.setItem("artists", JSON.stringify(artistsWithAlbums));
+      const readed = readAddedData();
+      readed.push({ name: artist, albums: albums });
+      localStorage.setItem("artists", JSON.stringify(readed));
       resolve({ artist, albums });
     }
   });
@@ -36,18 +40,19 @@ export function add(artist, albums) {
 
 const BLACKLIST = ["The Beatles", "The Cure", "Louise Attaque"];
 
-export const artistsWithAlbums = Object.values(
-  withAlbums
-    .filter(({ name }) => !BLACKLIST.includes(name))
-    .reduce((acc, { name, album }) => {
-      if (acc[name]) {
-        acc[name].albums.push(album);
-      } else {
-        acc[name] = { name, albums: [album] };
-      }
-      return acc;
-    }, {})
-);
+export const artistsWithAlbums = () =>
+  Object.values(
+    withAlbums
+      .filter(({ name }) => !BLACKLIST.includes(name))
+      .reduce((acc, { name, album }) => {
+        if (acc[name]) {
+          acc[name].albums.push(album);
+        } else {
+          acc[name] = { name, albums: [album] };
+        }
+        return acc;
+      }, {})
+  ).concat(readAddedData());
 
 export function fetchCoverImage(artist, album, size) {
   return new Promise((resolve, reject) => {
