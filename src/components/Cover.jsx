@@ -4,9 +4,17 @@ import { fetchCoverImage } from "../utils/utils";
 
 export function Cover({ artist, album }) {
   const [url, setUrl] = useState(undefined);
+  const [error, setError] = useState();
   useEffect(() => {
-    fetchCoverImage(artist, album, "medium").then((url) => setUrl(url));
+    setError(undefined);
+    fetchCoverImage(artist, album, "medium")
+      .then((url) => setUrl(url))
+      .catch((err) => setError(err.message));
   }, [artist, album]);
+
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
 
   return url ? <img src={url} title={album} /> : <span className="loader" />;
 }
