@@ -1,11 +1,14 @@
 import { useState, useEffect, useContext } from "react";
 import { string, oneOf } from "prop-types";
 import { FavoriteContext } from "../FavoriteContext";
+import { fetchCoverImage } from "../utils/utils";
 
 export function Cover({ artist, album, size }) {
   const [url, setUrl] = useState(undefined);
   useEffect(() => {
-    albumArt(artist, { album: album, size: size }).then((url) => setUrl(url));
+    fetchCoverImage(artist, album, size).then((url) => {
+      setUrl(url);
+    });
   }, [artist, album, size]);
   const { favorites, addFavorite, removeFavorite } =
     useContext(FavoriteContext);
