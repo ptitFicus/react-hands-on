@@ -40,3 +40,7 @@ export const artistsWithAlbums =
         const artistAlbums = albums.filter((al) => al.ArtistId === ArtistId);
         return { name: Name, albums: artistAlbums.map(({ Title }) => Title) };
       });
+
+export function fetchCoverImage(artist, album, size) {
+  return albumArt(artist, { album: album, size: size ?? "large" });
+}
