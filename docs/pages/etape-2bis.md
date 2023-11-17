@@ -6,8 +6,6 @@ React router est une librairie permettant de gérer le routage côté client des
 
 Elle permet de spécifier le composant à afficher pour une URL donnée, mais également de manipuler l'URL (en lecture ou écriture) et de faire des redirections entre les différentes pages de l'application sans devoir recharger toute l'application.
 
-### Définition du router
-
 ```js
 import {
   RouterProvider,
@@ -84,3 +82,14 @@ function Room() {
   return <div>Bienvenue dans la pièce {id}</div>;
 }
 ```
+
+# Objectif
+
+L'objectif de cette étape est de mettre en place un router dans l'application afin de déplacer la vue détaillée des artistes sur une nouvelle page.
+
+Cette nouvelle page doit être accessible au clic sur le nom de l'artiste dans le tableau.
+
+## Bonus
+
+- Refactoriser le code pour faire en sorte de ne pas devoir redéclarer le Layout (topbar) dans chaque page (en utilisant les routes "children" et l'Outlet)
+- Faire une page d'erreur custom pour votre application (qui sera par exemple affichée si l'arstiste saisi dans l'URL n'existe pas, voir https://reactrouter.com/en/main/route/route#errorelementerrorboundary)
