@@ -6,7 +6,7 @@ import { Cover } from "../components/Cover";
 export function Artist() {
   let { artistId } = useParams();
   const decoded = decodeURIComponent(artistId);
-  const artist = artistsWithAlbums.find(({ name }) => name === decoded);
+  const artist = artistsWithAlbums().find(({ name }) => name === decoded);
 
   return (
     <>
@@ -21,11 +21,7 @@ export function Artist() {
         {artist.albums.map((title) => (
           <div key={title}>
             <h2>{title}</h2>
-            <Cover
-              key={title}
-              album={title}
-              artist={artist.name}
-            />
+            <Cover key={title} album={title} artist={artist.name} />
           </div>
         ))}
       </div>
