@@ -22,6 +22,47 @@ const App = () => {
 }
 ```
 
+```jsx
+const App = () => {
+  const value = 'Some value';
+  return (
+   <div>
+    <p>En-tête</p>
+    <p>{value}</p>
+    <p>Pied de page</p>
+   </div>
+  ); 
+}
+```
+
+```jsx
+const App = () => {
+  const chose = true;
+  const value = 'Some value';
+  const otherValue = 'Other value';
+  const values = [1, 2, 3, 4, 5, 5];
+
+  return (
+   <div>
+    <p>En-tête</p>
+    <p>{value}</p>
+    <p>{chose ? value : otherValue}</p>
+    {chose && <>
+      <p>{value}</p>
+      <p>{otherValue}</p>
+    </>}
+    <ul>
+    {values.map(val => 
+      <li key={val}>
+        {`La chaine numéro ${val}`}
+      </li>
+    )}
+    </ul>
+   </div>
+  ); 
+}
+```
+
 # Etape 1
 
 Réaliser le même tableau que précédemment à l'aide de React.

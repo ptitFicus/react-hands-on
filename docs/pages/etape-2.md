@@ -93,3 +93,12 @@ export default function Form() {
   );
 }
 ```
+
+# Etape 2
+
+Ajouter une troisième colonne au tableau. Elle comprend un bouton `Display` permettant d'afficher le détail d'un artiste : son nom et la liste de ses albums.
+Lorsqu'un artiste est affiché, le bouton dans le tableau devient `Hide`
+
+## Bonus
+
+Créer un champ texte permettant de filtrer la liste des artistes.

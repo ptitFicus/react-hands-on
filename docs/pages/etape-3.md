@@ -1,3 +1,9 @@
+# Cycle de vie d'un composant 
+
+- Mount : le montage. Il intervient quand une instance du composant est créé dans le DOM.
+- Update : la mise à jour. Ce cycle de vie est déclenché par un changement d'état du composant.
+- Unmount : le démontage. Cette méthode est appelée une fois qu'un composant est retiré du DOM.
+
 # Interagir avec le monde extérieur
 
 ## Promesses
@@ -15,15 +21,7 @@ faireQqc()
 ```
 
 
-## Avec React
-
-### Cycle de vie d'un composant 
-
-- Mount : le montage. Il intervient quand une instance du composant est créé dans le DOM.
-- Update : la mise à jour. Ce cycle de vie est déclenché par un changement d'état du composant.
-- Unmount : le démontage. Cette méthode est appelée une fois qu'un composant est retiré du DOM.
-
-### useEffect
+## Avec React : useEffect
 
 useEffect est un Hook React qui vous permet de synchroniser un composant React avec un système extérieur.
 
@@ -53,6 +51,21 @@ useEffect(() => {
         reponse
     }));
 }, [])
+```
+
+```jsx
+const myComponent = ({id}) => {
+    const [state, setState] = useState([]);
+    useEffect(() => {
+        fetch(`/api/${id}`).then(response => response.json()).then(jsonArray => {
+            setState(jsonArray);
+        });
+    }, []);
+
+    return <ul>
+        {state?.map(val => <li key={val.id}>{val.name}</li>)}
+    </ul>
+}
 ```
 
 # Etape 3

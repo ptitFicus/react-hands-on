@@ -10,4 +10,6 @@ La fonction `add` du fichier `utils.js` est fournie.
 
 ## Bonus
 
-Proposer un autre moyen de saisir plusieurs albums
+- Proposer un autre moyen de saisir plusieurs albums.
+- Ajouter une gestion d'erreur pour un artiste dont le nom fait plus de 40 caractères.
+- Ajouter une notification de succès lors de la création d'un artiste.

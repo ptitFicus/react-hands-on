@@ -66,12 +66,37 @@ Le Document Object Model (DOM) est une interface de programmation normalisée pa
 ```js
 document.getElementById('un-id').innerText = 'Un autre texte';
 document.getElementsByTagName('p')[0].className = 'mes-paragraphes'
+const root = document.getElementById('root')
+const main = document.createElement('main');
+root.appendChild(main);
 ```
 
+L'interface `Document` est présentée sur [mdn web docs](https://developer.mozilla.org/fr/docs/Web/API/Document).
 
 # Etape 0
 
 A l'aide du tableau `artistsWithAlbum` du fichier `utils.js`, créer une page qui crée un tableau comprenant tous les artistes, et pour chaque artiste la liste de ses albums.
+
+```html
+<table>
+    <thead>
+        <tr>
+            <td>Artist (2))</td>
+            <td>Albums</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>AC/DC</td>
+            <td>26</td>
+        </tr>
+        <tr>
+            <td>Michel Sardou</td>
+            <td>No albums</td>
+        </tr>
+    </tbody>
+</table>
+```
 
 ## Bonus
 
