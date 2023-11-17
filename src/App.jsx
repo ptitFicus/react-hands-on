@@ -49,10 +49,10 @@ export const App = () => {
         <ArtistTable
           artists={
             (filter &&
-              artistsWithAlbums.filter((a) =>
+              artistsWithAlbums().filter((a) =>
                 a.name.toUpperCase().includes(filter)
               )) ||
-            artistsWithAlbums
+            artistsWithAlbums()
           }
           onArtistSelection={(value) => setArtist(value)}
         />
