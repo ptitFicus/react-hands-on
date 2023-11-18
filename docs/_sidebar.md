@@ -7,3 +7,4 @@
   - [Etape 4](./pages/etape-4.md)
   - [Etape 5](./pages/etape-5.md)
   - [Etape 6](./pages/etape-6.md)
+  - [Etape 7](./pages/etape-7.md)
