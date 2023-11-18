@@ -23,18 +23,20 @@ function readAddedData() {
 
 export function add(artist, albums) {
   return new Promise((resolve, reject) => {
-    if (
-      artistsWithAlbums().find(
-        ({ name }) => name.toUpperCase() === artist?.toUpperCase()
-      )
-    ) {
-      reject(new Error("Artist already exist"));
-    } else {
-      const readed = readAddedData();
-      readed.push({ name: artist, albums: albums });
-      localStorage.setItem("artists", JSON.stringify(readed));
-      resolve({ artist, albums });
-    }
+    setTimeout(() => {
+      if (
+        artistsWithAlbums().find(
+          ({ name }) => name.toUpperCase() === artist?.toUpperCase()
+        )
+      ) {
+        reject(new Error("Artist already exist"));
+      } else {
+        const readed = readAddedData();
+        readed.push({ name: artist, albums: albums });
+        localStorage.setItem("artists", JSON.stringify(readed));
+        resolve({ artist, albums });
+      }
+    }, 2000);
   });
 }
 
