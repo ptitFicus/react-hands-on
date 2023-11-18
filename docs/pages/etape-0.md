@@ -12,22 +12,20 @@ Il utilise principalement 3 langages :
 - `CSS` pour la présentation des documents
 - `Javascript` pour le dynamisme des documents
 
-
 ## HTML
 
 Le HyperText Markup Language, généralement abrégé HTML ou, dans sa dernière version, HTML5, est le langage de balisage conçu pour représenter les pages web.
 
-
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Ma page Web</title>
-    </head>
-    <body>
-        <p>Un paragraphe</p>
-        <p class="mes-paragraphes">Un autre paragraphe</p>
-    </body>
+  <head>
+    <title>Ma page Web</title>
+  </head>
+  <body>
+    <p>Un paragraphe</p>
+    <p class="mes-paragraphes">Un autre paragraphe</p>
+  </body>
 </html>
 ```
 
@@ -37,26 +35,23 @@ Les feuilles de style en cascade, généralement appelées CSS de l'anglais Casc
 
 ```css
 p {
-    color: red;
+  color: red;
 }
 
 .mes-paragraphes {
-    color: blue;
+  color: blue;
 }
 ```
-
 
 ## JavaScript
 
 JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.
 
 ```js
-
-let str = 'Hello'
-if (str.startsWith('H')) {
-    alert(str);
+let str = "Hello";
+if (str.startsWith("H")) {
+  alert(str);
 }
-
 ```
 
 ## DOM
@@ -64,39 +59,44 @@ if (str.startsWith('H')) {
 Le Document Object Model (DOM) est une interface de programmation normalisée par le W3C, qui permet à des scripts d'examiner et de modifier le contenu du navigateur web1.
 
 ```js
-document.getElementById('un-id').innerText = 'Un autre texte';
-document.getElementsByTagName('p')[0].className = 'mes-paragraphes'
-const root = document.getElementById('root')
-const main = document.createElement('main');
+// Sélectionné l'élément avec l'identifiant "root"
+const root = document.getElementById("root");
+// Crée un nouvel élément html de type "main" (il n'est pas encore ajouté à la page)
+const main = document.createElement("main");
+// Modifie le contenu textuel de l'élément main créé ci-dessus
+main.innerText = "COUCOU";
+// Rajoute notre élément main en tant qu'enfant de l'élément séléctionné précédemment
 root.appendChild(main);
 ```
 
 L'interface `Document` est présentée sur [mdn web docs](https://developer.mozilla.org/fr/docs/Web/API/Document).
 
-# Etape 0
+# Objectif
 
 A l'aide du tableau `artistsWithAlbum` du fichier `utils.js`, créer une page qui crée un tableau comprenant tous les artistes, et pour chaque artiste la liste de ses albums.
 
 ```html
 <table>
-    <thead>
-        <tr>
-            <td>Artist (2))</td>
-            <td>Albums</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>AC/DC</td>
-            <td>26</td>
-        </tr>
-        <tr>
-            <td>Michel Sardou</td>
-            <td>No albums</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <td>Artist (2)</td>
+      <td>Albums</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AC/DC</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td>Michel Sardou</td>
+      <td>No albums</td>
+    </tr>
+  </tbody>
 </table>
 ```
+
+Vous pouvez positionner ce tableau comme enfant de la div avec l'id `root`.
 
 ## Bonus
 

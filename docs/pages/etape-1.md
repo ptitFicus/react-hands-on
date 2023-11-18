@@ -13,54 +13,78 @@ JSX (JavaScript Syntax Extension et parfois appelé JavaScript XML) est une exte
 ```jsx
 const App = () => {
   return (
-   <div>
-    <p>En-tête</p>
-    <p>Contenu</p>
-    <p>Pied de page</p>
-   </div>
-  ); 
-}
+    <div>
+      <p>En-tête</p>
+      <p>Contenu</p>
+      <p>Pied de page</p>
+    </div>
+  );
+};
 ```
+
+## Variabiliser des éléments de contenu
+
+Pour insérer le contenu d'une variable JS dans un bloc de JSX, il faut utiliser la syntaxe `{maVariable}`.
 
 ```jsx
 const App = () => {
-  const value = 'Some value';
+  const value = "Some value";
   return (
-   <div>
-    <p>En-tête</p>
-    <p>{value}</p>
-    <p>Pied de page</p>
-   </div>
-  ); 
-}
+    <div>
+      <p>En-tête</p>
+      <p>{value}</p>
+      <p>Pied de page</p>
+    </div>
+  );
+};
 ```
+
+## Affichage conditionnel et parcours de tableau
+
+Comme JSX n'est qu'une extension du langage JavaScript, de nombreuses mécaniques de JavaScript sont utilisables directement dans le JSX.
+
+Par exemple il est possible d'utiliser l'opérateur ternaire pour faire de l'affichage conditionnel : `{user === "Admin" ? "Welcome admin !!!" : "Welcome"}`.
+
+Il est également possible d'utiliser l'opérateur `&&` pour n'afficher quelque chose que si une variable / expression est "truthy" : `{user === "Admin" && "Current user is admin"}`.
+
+Au sein de ces expressions, il est possible de rendre non pas des chaîne de caractère mais des éléments JSX : `{user === "Admin" && <button>Delete application</button>}`.
+
+On peut également utiliser les méthodes JS habituelles de parcours des tableaux (map, filter, reduce). L'utilisation de map permet par exemple d'afficher un élément JSX pour chaque élément du tableau.
+Lorsque l'on fait des itérations de ce genre, il est nécessaire pour chaque élément rendu de lui attribuer une propriété "key" qui doit être unique au sein du composant.
+
+Pour plus de détails sur le JSX et sa syntaxe, visitez les pages suivantes :
+
+- https://react.dev/learn/writing-markup-with-jsx
+- https://react.dev/learn/javascript-in-jsx-with-curly-braces
+- https://react.dev/learn/conditional-rendering
+- https://react.dev/learn/rendering-lists
 
 ```jsx
 const App = () => {
   const chose = true;
-  const value = 'Some value';
-  const otherValue = 'Other value';
+  const value = "Some value";
+  const otherValue = "Other value";
   const values = [1, 2, 3, 4, 5, 5];
 
   return (
-   <div>
-    <p>En-tête</p>
-    <p>{value}</p>
-    <p>{chose ? value : otherValue}</p>
-    {chose && <>
+    <div>
+      <p>En-tête</p>
       <p>{value}</p>
-      <p>{otherValue}</p>
-    </>}
-    <ul>
-    {values.map(val => 
-      <li key={val}>
-        {`La chaine numéro ${val}`}
-      </li>
-    )}
-    </ul>
-   </div>
-  ); 
-}
+      <p>{chose ? value : otherValue}</p>
+      {chose && (
+        <>
+          <p>{value}</p>
+          <p>{otherValue}</p>
+        </>
+      )}
+      <ul>
+        {values.map((val) => (
+          <li key={val}>{`La chaine numéro ${val}`}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 ```
 
 # Etape 1
