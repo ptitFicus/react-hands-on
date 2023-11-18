@@ -103,4 +103,5 @@ fetchCoverImage("nom de l'artiste", "nom de l'album", "medium"); // le 3è param
 
 ## Bonus
 
-Gérer les erreurs lors de la récupération des images (sur la page de "Led Zeppelin", un des albums provoque une erreur).
+- Afficher un indicateur de chargement en attendant la réponse de `fetchCoverImage`. Un indicateur est fourni qui peut être affiché de la manière suivante : `<div className="loader"/>`
+- Gérer les erreurs lors de la récupération des images (sur la page de "Led Zeppelin", un des albums provoque une erreur).

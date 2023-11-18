@@ -72,4 +72,4 @@ Définissez également les propTypes pour ce composant.
 
 ## BONUS
 
-Adaptez le message d'erreur lors de la récupération des pochettes pour que ça s'affiche joliment dans le tableau (un des albums de "Led Zeppelin", provoque une erreur).
+- Adaptez le message d'erreur lors de la récupération des pochettes pour que ça s'affiche joliment dans le tableau (un des albums de "Led Zeppelin", provoque une erreur).
