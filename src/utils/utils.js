@@ -56,19 +56,27 @@ export const artistsWithAlbums = () =>
 
 export function fetchCoverImage(artist, album, size) {
   return new Promise((resolve, reject) => {
-    if (
-      artist.toUpperCase() === "LED ZEPPELIN" &&
-      album.toUpperCase() === "PRESENCE"
-    ) {
-      reject(new Error(`Unknown album ${album} (${artist})`));
-    } else {
-      resolve(
-        withAlbums.find(
-          ({ name, album: candidateAlbum }) =>
-            name === artist && album === candidateAlbum
-        )?.[size]
-      );
-    }
+    setTimeout(() => {
+      if (
+        artist.toUpperCase() === "LED ZEPPELIN" &&
+        album.toUpperCase() === "PRESENCE"
+      ) {
+        reject(new Error(`Unknown album ${album} (${artist})`));
+      } else {
+        resolve(
+          withAlbums.find(
+            ({ name, album: candidateAlbum }) =>
+              name === artist && album === candidateAlbum
+          )?.[size]
+        );
+      }
+    }, getRandomInt(200, 2000));
     //return albumArt(artist, { album: album, size: size ?? "large" });
   });
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
