@@ -73,7 +73,7 @@ L'interface `Document` est présentée sur [mdn web docs](https://developer.mozi
 
 # Objectif
 
-A l'aide du tableau `artistsWithAlbum` du fichier `utils.js`, créer une page qui crée un tableau comprenant tous les artistes, et pour chaque artiste la liste de ses albums.
+A l'aide de la fonction `artistsWithAlbum` du fichier `utils.js`, créer une page qui crée un tableau comprenant tous les artistes, et pour chaque artiste la liste de ses albums.
 
 ```html
 <table>
@@ -86,7 +86,7 @@ A l'aide du tableau `artistsWithAlbum` du fichier `utils.js`, créer une page qu
   <tbody>
     <tr>
       <td>AC/DC</td>
-      <td>26</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>Michel Sardou</td>
@@ -94,6 +94,18 @@ A l'aide du tableau `artistsWithAlbum` du fichier `utils.js`, créer une page qu
     </tr>
   </tbody>
 </table>
+```
+
+Voici un extrait des données rénvoyées par cette fonction :
+
+```json
+[
+  {
+    "name": "AC/DC",
+    "albums": ["For Those About To Rock We Salute You", "Let There Be Rock"]
+  },
+  { "name": "Aaron Goldberg", "albums": ["Worlds"] }
+]
 ```
 
 Vous pouvez positionner ce tableau comme enfant de la div avec l'id `root`.

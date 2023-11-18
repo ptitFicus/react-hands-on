@@ -46,6 +46,14 @@ useEffect(() => {
 }, []);
 ```
 
+### Limites de useEffect
+
+Le hook useEffect est très puissant et permet de nombreuses choses, mais attention à ne pas en abuser. Avoir plusieurs useEffect modifiant chacun une partie du state d'un composant le rend très complexe à appréhender et débugger.
+
+Cette page fourni un certain nombre d'exemple dans lesquel useEffect n'est pas la meilleure solution : https://react.dev/learn/you-might-not-need-an-effect.
+
+Depuis React 18, les effets sont exécutés deux fois lorsque le composant se monte (si le StrictMode est activé), ce n'est pas un bug mais une feature permettant de détecter d'éventuels défaut dans l'implémentation de vos effets, plus de détails ici : https://react.dev/reference/react/useEffect#my-effect-runs-twice-when-the-component-mounts.
+
 # Interagir avec le monde extérieur
 
 ## Promesses
@@ -63,7 +71,7 @@ faireQqc()
 ```
 
 ```jsx
-const myComponent = ({ id }) => {
+const MyComponent = ({ id }) => {
   const [state, setState] = useState([]);
   useEffect(() => {
     fetch(`/api/${id}`)
@@ -90,7 +98,7 @@ Enrichir le composant de vue des artistes avec l'image de la pochette.
 La fonction fetchCoverImage du fichiers utils/utils.js est à utiliser, elle s'appelle de la manière suivante :
 
 ```js
-fetchCoverImage("nom de l'artiste", "nom de l'album", "medium"); // le 3è paramètre peut-être small, large ou medium en fonction de la taille souhaitée
+fetchCoverImage("nom de l'artiste", "nom de l'album", "medium"); // le 3è paramètre peut-être small ou medium en fonction de la taille souhaitée
 ```
 
 ## Bonus

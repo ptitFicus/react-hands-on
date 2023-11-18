@@ -87,10 +87,49 @@ const App = () => {
 };
 ```
 
+## Rendre plusieurs éléments dans un composant
+
+Il est parfois nécessaire de rendre deux composants côte à côté (que ce soit dans un composant ou lors du parcours d'un tableau).
+
+React ne supporte cependant pas le rendu de plusieurs éléments "racines" dans un composant :
+
+```jsx
+function MonSuperComponent() {
+  // Ce code génère une erreur
+  return <div>Hello</div><div>World !</div>
+}
+```
+
+Il est bien sûr possible de "wrapper" les éléments dans un seul parent (par exemple une div), mais cela alourdi inutilement le DOM et peut poser problème au niveau dres règles de style CSS.
+
+La méthode préconise est donc d'utiliser les "Fragments" (https://react.dev/reference/react/Fragment), ce sont des éléments de syntaxe JSX qui disparaîtront lors de la conversion du JSX en HTML.
+
+```jsx
+function MonSuperComponent() {
+  return (
+    // Version courte de la syntaxe
+    <>
+      <div>Hello</div>
+      <div>World !</div>
+    </>
+  );
+}
+
+function MonAutreSuperComponent() {
+  return (
+    // Version longue de la syntaxe
+    <React.Fragment>
+      <div>Hello</div>
+      <div>World !</div>
+    </React.Fragment>
+  );
+}
+```
+
 # Etape 1
 
 Réaliser le même tableau que précédemment à l'aide de React.
 
 ## Bonus
 
-Rendre le tableau indépendant de la constante `artistsWithAlbums`.
+Rendre le tableau indépendant de la fonction `artistsWithAlbums`.

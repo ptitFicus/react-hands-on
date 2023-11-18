@@ -2,7 +2,7 @@
 
 ## Props
 
-Les composants React utilisent des props pour communiquer entre eux.  Chaque composant parent peut passer des informations à ses composants enfants en leur donnant des props. Les props vous rappellent peut-être les attributs HTML, mais vous pouvez y passer n’importe quelle valeur JavaScript, y compris des objets et des fonctions.
+Les composants React utilisent des props pour communiquer entre eux. Chaque composant parent peut passer des informations à ses composants enfants en leur donnant des props. Les props vous rappellent peut-être les attributs HTML, mais vous pouvez y passer n’importe quelle valeur JavaScript, y compris des objets et des fonctions.
 
 ```jsx
 function Avatar({ person, size }) {
@@ -23,22 +23,22 @@ export default function Profile() {
       <Avatar
         size={100}
         person={{
-          name: 'Katsuko Saruhashi',
-          imageId: 'YfeOqp2'
+          name: "Katsuko Saruhashi",
+          imageId: "YfeOqp2",
         }}
       />
       <Avatar
         size={80}
         person={{
-          name: 'Aklilu Lemma',
-          imageId: 'OKS67lh'
+          name: "Aklilu Lemma",
+          imageId: "OKS67lh",
         }}
       />
       <Avatar
         size={50}
         person={{
-          name: 'Lin Lanying',
-          imageId: '1bX5QH6'
+          name: "Lin Lanying",
+          imageId: "1bX5QH6",
         }}
       />
     </div>
@@ -46,7 +46,34 @@ export default function Profile() {
 }
 ```
 
-## useState 
+Les props permettent également une forme de communication enfant -> parent grâce au passage de fonction de callback.
+
+```jsx
+function MySuperForm({ submit }) {
+  return (
+    <form
+      onSubmit={(e) => {
+        // évite de rafraîchir la page au submit
+        e.preventDefault();
+        // Call parent function with form values
+        submit(e.target.user.value);
+      }}
+    >
+      <label>
+        Name
+        <input type="text" name="user" />
+      </label>
+      <button type="submit">Valider</button>
+    </form>
+  );
+}
+
+function ParentComponent() {
+  return <MySuperForm submit={(username) => console.log(username)} />;
+}
+```
+
+## useState
 
 useState est un Hook React qui ajoute une variable d’état dans votre composant.
 
@@ -56,10 +83,10 @@ const [state, setState] = useState(initialState);
 
 ```jsx
 export default function Form() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
-  const fullName = firstName + ' ' + lastName;
+  const fullName = firstName + " " + lastName;
 
   function handleFirstNameChange(e) {
     setFirstName(e.target.value);
@@ -73,18 +100,10 @@ export default function Form() {
     <>
       <h2>Enregistrez-vous :</h2>
       <label>
-        Prénom :{' '}
-        <input
-          value={firstName}
-          onChange={handleFirstNameChange}
-        />
+        Prénom : <input value={firstName} onChange={handleFirstNameChange} />
       </label>
       <label>
-        Nom :{' '}
-        <input
-          value={lastName}
-          onChange={handleLastNameChange}
-        />
+        Nom : <input value={lastName} onChange={handleLastNameChange} />
       </label>
       <p>
         Votre billet sera au nom de : <b>{fullName}</b>
