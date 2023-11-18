@@ -58,14 +58,18 @@ MyComponent.defaultProps = {
     myFunction: () => {}
 };
 
-
-
 ```
 
-# Etape 4
+Voir [cette page](https://github.com/facebook/prop-types#usage) pour plus de détails sur les propTypes.
 
-Factoriser le composant de pochette pour pouvoir l'uiliser également dans le tableau (3ème colonne).
+# Objectif
+
+Factoriser le composant de pochette pour pouvoir l'uiliser également dans le tableau (dans une 3ème colonne).
 
 Les props attendues : `artist`, `album` et `size`.
 
 Définissez également les propTypes pour ce composant.
+
+## BONUS
+
+Adaptez le message d'erreur lors de la récupération des pochettes pour que ça s'affiche joliment dans le tableau (un des albums de "Led Zeppelin", provoque une erreur).
