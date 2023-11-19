@@ -1,6 +1,6 @@
 import "./App.css";
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
   Outlet,
   Link,
@@ -13,7 +13,7 @@ import { search } from "./utils/utils";
 import logo from "./assets/logo.jpg";
 import { Favorites } from "./pages/Favorites";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,
@@ -74,9 +74,9 @@ function Layout() {
     <>
       <header>
         <nav>
-          <a href="/">
+          <Link to="/">
             <img src={logo} height="70" style={{ borderRadius: "50%" }} />
-          </a>
+          </Link>
           <ul>
             <li>
               <Link to="/">search</Link>
