@@ -6,10 +6,10 @@
   "homepage": "https://ptitficus.github.io/react-hands-on/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp -r documentation docs",
+    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy": "npm run build && cp -r documentation dist/",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
