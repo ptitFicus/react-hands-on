@@ -77,6 +77,29 @@ function ParentComponent() {
 
 useState est un Hook React qui ajoute une variable d’état dans votre composant.
 
+### Aparté sur les hooks
+
+useState est le premier hook que nous rencontrons, nuos en croiserons quelques autres par la suite. Les hooks sont des fonctions permettant de conserver un état local dans un composant, d'exécuter des actions au changement de certaines props, ...
+
+Les hooks sont reconnaissables facilement car ils commencent tous par `use`.
+
+Ils peuvent sembler magiques au premier abord (et même aux deuxième et troisièmes abords !), pour l'instant, il vous suffit de savoir que les hooks ne peuvent pas être utilisés n'importe comme, leur utilisation doit satisfaire une règle :
+
+> Les hooks doivent être appelés au "top level" (à la racine) des composants (ou des hooks customs) dans lesquels ils sont utilisés.
+
+Concrètement, cela veut dire qu'un hook ne peut pas être appelé :
+
+- dans une boucle
+- dans un if
+- dans une fonction de callback
+
+### Revenons à useState
+
+Le hook useState renvoie un tableau contenant deux éléments :
+
+1. La valeur actuelle de la variable d'état
+2. Une fonction permettant de modifier la variable d'état, déclenchant un nouveau rendu du composant
+
 ```js
 const [state, setState] = useState(initialState);
 ```
@@ -116,7 +139,7 @@ export default function Form() {
 # Etape 2
 
 Ajouter une troisième colonne au tableau. Elle comprend un bouton `Display` permettant d'afficher le détail d'un artiste : son nom et la liste de ses albums.
-Lorsqu'un artiste est affiché, le bouton dans le tableau devient `Hide`
+Lorsqu'un artiste est affiché, un bouton permet de fermer le détail.
 
 ## Bonus
 

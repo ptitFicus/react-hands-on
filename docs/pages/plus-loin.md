@@ -7,6 +7,7 @@ Voici quelques sujets à creuser que l'on a pas pu aborder dans ce hand's on par
 - [useReducer](https://react.dev/reference/react/useReducer) : un hook permettant de gérer un état non pas en modifiant directement sa valeur, mais en s'appuyant sur une fonction "reducer" chargée de faire évoluer l'état en prenant l'état précédent un un évènement.
 - [useMemo](https://react.dev/reference/react/useMemo) et [useCallback](https://react.dev/reference/react/useCallback) : deux hooks à utiliser avec modération qui peuvent vous permettre de régler certain soucis de performance.
 - [les portals](https://react.dev/reference/react-dom/createPortal#rendering-to-a-different-part-of-the-dom) qui permettent de rendre le composant enfant d'un composant à un autre endroit du DOM.
+- [les customs hooks](https://react.dev/learn/reusing-logic-with-custom-hooks) pour créer vos propres hooks
 
 ## Articles "avancés"
 
