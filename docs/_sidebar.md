@@ -9,4 +9,4 @@
   - [Etape 6](./pages/etape-6.md)
   - [Etape 7](./pages/etape-7.md)
   - [Aller plus loin](./pages/plus-loin.md)
-  - [Application finale](https://ptitficus.github.io/react-hands-on/demo)
+- [Démo](https://ptitficus.github.io/react-hands-on/demo)

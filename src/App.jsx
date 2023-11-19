@@ -85,7 +85,7 @@ function Layout() {
               <Link to="/favorites">see favorites</Link>
             </li>
             <li>
-              <a href="https://ptitficus.github.io/react-hands-on/docs/#/">
+              <a href="https://ptitficus.github.io/react-hands-on/">
                 consignes
               </a>
             </li>
