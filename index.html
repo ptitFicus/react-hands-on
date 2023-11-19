@@ -1,18 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/react-hands-on/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">-->
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
-    <title>Hands On React</title>
-    <script type="module" crossorigin src="/react-hands-on/assets/index-73543d0a.js"></script>
-    <link rel="stylesheet" href="/react-hands-on/assets/index-5b33a9d7.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    
-    <script type="text/javascript" src="https://unpkg.com/album-art"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!-- Theme: Simple -->
+    <link rel="stylesheet" href="./styles/docsify-style.css">
+
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/docsify-toc.css">
+    <script src="./assets/js/edit-github.min.js"></script>
+    <link rel="icon" href="./assets/img/maif.png">
+</head>
+<body>
+<div id="app"></div>
+<script>
+    window.$docsify = {
+        loadSidebar: true,
+        basePath: './',
+        homepage: 'homepage.md',
+        logo: './assets/img/maif.png',
+        themeColor: '#2E404F',
+        subMaxLevel: 1,
+        sidebarDisplayLevel: 0,
+        name: 'my-doc',
+        repo: '',
+        auto2top: true,
+        search: {
+            maxAge: 86400000, // Expiration time, the default one day
+            paths: 'auto', // or 'auto'
+            placeholder: 'Mot-clé, titre, ...',
+            noData: 'Aucun résultat !',
+            depth: 6,
+            hideOtherSidebarContent: true, // whether or not to hide other sidebar content
+            namespace: 'mon-namespace',
+        },
+        tabs: {
+            persist    : true,      // default
+            sync       : true,      // default
+            theme      : 'classic', // default
+            tabComments: true,      // default
+            tabHeadings: true       // default
+        },
+        jxtoc: {
+            headings: "h1, h2, h3, h4, h5, h6",
+        },
+        markdown: {
+            renderer: {
+
+                code: function (code, lang) {
+                if (lang === 'drawio') {
+                    if (window.drawioConverter) {
+                    console.log('drawio 转化中')
+                    return window.drawioConverter(code)
+                    } else {
+                    return `<div class='drawio-code'>${code}</div>`
+                    }
+                } else {
+                    return this.origin.code.apply(this, arguments);
+                }
+                }
+            }
+        },
+    }
+
+</script>
+<!-- Docsify v4 -->
+<script src="./assets/js/docsify.min.js"></script>
+<script src="./assets/js/search.min.js"></script>
+<script src="./assets/js/zoom-image.min.js"></script>
+<script src="./assets/js/emoji.min.js"></script>
+<script src="./assets/js/sidebar-collpase.min.js"></script>
+<script src="./assets/js/dodont.js"></script>
+<script src="./assets/js/glossary.js"></script>
+<script src="./assets/js/mermaid.js"></script>
+<script src="./assets/js/docsify-mermaid.js"></script>
+<script src="./assets/js/docsify-footnotes.js"></script>
+<script src="./assets/js/docsify-toc.js"></script>
+<script src="./assets/js/viewer.min.js"></script>
+<script src='./assets/js/drawio.js'></script>
+</body>
 </html>
