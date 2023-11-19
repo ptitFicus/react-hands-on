@@ -1,6 +1,6 @@
 import "./App.css";
 import {
-  createHashRouter,
+  createBrowserRouter,
   RouterProvider,
   Outlet,
   Link,
@@ -13,7 +13,7 @@ import { search } from "./utils/utils";
 import logo from "./assets/logo.jpg";
 import { Favorites } from "./pages/Favorites";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
