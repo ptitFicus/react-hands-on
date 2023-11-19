@@ -9,8 +9,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy": "npm run build && cp dist/index.html dist/404.html",
-    "deploy": "gh-pages -d dist "
+    "predeploy": "npm run build && cp dist/index.html dist/404.html && cp -r ./dist/* ./docs/_media/",
+    "deploy": "gh-pages -d docs "
   },
   "dependencies": {
     "lodash": "^4.17.21",
