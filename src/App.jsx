@@ -1,5 +1,6 @@
 import logo from "./assets/logo.jpg";
 import "./App.css";
+import { artistsWithAlbums } from "./utils/utils";
 
 export const App = () => {
   return (
