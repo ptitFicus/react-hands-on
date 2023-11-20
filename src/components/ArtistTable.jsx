@@ -16,7 +16,7 @@ export const ArtistTable = ({ artists }) => {
             <th>
               <Link to={`/artist/${encodeURIComponent(a.name)}`}>{a.name}</Link>
             </th>
-            <td>{a.albums.length}</td>
+            <td>{a.albums.length > 0 ? a.albums.length : "No albums"}</td>
           </tr>
         ))}
       </tbody>
