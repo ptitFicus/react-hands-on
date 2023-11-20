@@ -143,6 +143,10 @@ Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez r
 Ajouter une troisième colonne au tableau. Elle comprend un bouton `Display` permettant d'afficher le détail d'un artiste : son nom et la liste de ses albums.
 Lorsqu'un artiste est affiché, un bouton permet de fermer le détail.
 
+## Résultat attendu
+
+![resultat-etape-1](../assets/img/resultat-etape-2.gif)
+
 ## Bonus
 
 Créer un champ texte permettant de filtrer la liste des artistes.
