@@ -100,9 +100,9 @@ function MonSuperComponent() {
 }
 ```
 
-Il est bien sûr possible de "wrapper" les éléments dans un seul parent (par exemple une div), mais cela alourdi inutilement le DOM et peut poser problème au niveau dres règles de style CSS.
+Il est bien sûr possible de "wrapper" les éléments dans un seul parent (par exemple une div), mais cela alourdi inutilement le DOM et peut poser problème au niveau des règles de style CSS.
 
-La méthode préconise est donc d'utiliser les "Fragments" (https://react.dev/reference/react/Fragment), ce sont des éléments de syntaxe JSX qui disparaîtront lors de la conversion du JSX en HTML.
+La méthode préconisée est donc d'utiliser les "Fragments" (https://react.dev/reference/react/Fragment), ce sont des éléments de syntaxe JSX qui disparaissent lors de la conversion du JSX en HTML.
 
 ```jsx
 function MonSuperComponent() {
