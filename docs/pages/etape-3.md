@@ -103,6 +103,10 @@ La fonction fetchCoverImage du fichiers utils/utils.js est à utiliser, elle s'a
 fetchCoverImage("nom de l'artiste", "nom de l'album", "medium"); // le 3è paramètre peut-être small ou medium en fonction de la taille souhaitée
 ```
 
+## Résultat attendu
+
+![resultat-etape-3](../assets/img/resultat-etape-3.gif)
+
 ## Bonus
 
 - Afficher un indicateur de chargement en attendant la réponse de `fetchCoverImage`. Un indicateur est fourni qui peut être affiché de la manière suivante : `<div className="loader"/>`
