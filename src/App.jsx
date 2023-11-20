@@ -82,7 +82,7 @@ function Layout() {
               <Link to="/">search</Link>
             </li>
             <li>
-              <Link to="/favorites">see favorites</Link>
+              <Link to="/favorites">favorites</Link>
             </li>
             <li>
               <a href="https://ptitficus.github.io/react-hands-on/">
