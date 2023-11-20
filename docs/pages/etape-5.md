@@ -5,11 +5,26 @@ Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez r
 On cherche à charger les artistes comme s'ils venaient d'un serveur distant.
 La fonction `search` du fichier `utils.js` réalise la recherche.
 
+Elle retourne une promise, voici un exemple d'utilisation :
+
+```js
+import { search } from "./utils/utils";
+
+// ...
+search("aero").then((result) => {
+  console.log("search result", result);
+});
+```
+
 Il faut ajouter un champ texte, qui va à chaque changement interroger la liste des artistes et permettre l'affichage du tableau.
 
 Rien de très nouveau dans cette étape, il s'agit de réutiliser tout ce que vous avez apris dans les étapes précédentes ;)
 
 Une implémentation "simple" est réalisable avec useState/useEffect.
+
+## Résultat attendu
+
+![resultat-etape-5](../assets/img/resultat-etape-5.gif)
 
 ## Bonus
 
