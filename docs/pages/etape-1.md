@@ -130,6 +130,10 @@ function MonAutreSuperComponent() {
 
 Positionnez vous sur la branche `etape-1-debut`, puis réaliser le même tableau que précédemment à l'aide de React (cette fois-ci dans le fichier App.jsx).
 
+## Résultat attendu
+
+![resultat-etape-1](../assets/img/resultat-etape-1.png)
+
 ## Bonus
 
 Rendre le tableau indépendant de la fonction `artistsWithAlbums`.
