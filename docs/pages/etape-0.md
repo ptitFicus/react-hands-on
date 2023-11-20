@@ -97,7 +97,7 @@ npm run dev
 
 ## Objectif
 
-A l'aide de la fonction `artistsWithAlbum` du fichier `utils.js`, créer une page qui crée un tableau comprenant tous les artistes, et pour chaque artiste la liste de ses albums.
+A l'aide de la fonction `artistsWithAlbum` du fichier `utils/utils.js`, créer une page qui crée un tableau comprenant tous les artistes, et pour chaque artiste la liste de ses albums.
 
 Le code de cette étape est à réaliser dans le fichier `main.jsx`.
 

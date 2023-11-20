@@ -130,10 +130,22 @@ function MonAutreSuperComponent() {
 
 Positionnez vous sur la branche `etape-1-debut`, puis réaliser le même tableau que précédemment à l'aide de React (cette fois-ci dans le fichier App.jsx).
 
+Pour rappel, les données à afficher sont obtenues en appelant la fonction `artistsWithAlbum` du fichier `utils/utils.js`, voici un extrait des données renvoyées par l'appel de cette fonction :
+
+```json
+[
+  {
+    "name": "AC/DC",
+    "albums": ["For Those About To Rock We Salute You", "Let There Be Rock"]
+  },
+  { "name": "Aaron Goldberg", "albums": ["Worlds"] }
+]
+```
+
 ## Résultat attendu
 
 ![resultat-etape-1](../assets/img/resultat-etape-1.png)
 
 ## Bonus
 
-Rendre le tableau indépendant de la fonction `artistsWithAlbums`.
+- Externaliser le rendu du tableau dans un composant dédié qui prend la liste des artistes en paramètre.
