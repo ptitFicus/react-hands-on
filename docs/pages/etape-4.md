@@ -64,13 +64,17 @@ Voir [cette page](https://github.com/facebook/prop-types#usage) pour plus de dé
 
 # Objectif
 
-Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartie d'une base saine, positionnez vous sur la branche `etape-3`.
+Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartir d'une base saine, positionnez vous sur la branche `etape-3`.
 
 Factoriser le composant de pochette pour pouvoir l'uiliser également dans le tableau (dans une 3ème colonne).
 
-Les props attendues : `artist`, `album` et `size`.
+Les props attendues : `artist`, `album` et `size` (qui peut être "small" ou "medium").
 
 Définissez également les propTypes pour ce composant.
+
+## Résultat attendu
+
+![resultat-etape-4](../assets/img/resultat-etape-4.gif)
 
 ## BONUS
 

@@ -93,7 +93,7 @@ const MyComponent = ({ id }) => {
 
 # Objectif
 
-Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartie d'une base saine, positionnez vous sur la branche `etape-2bis`.
+Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartir d'une base saine, positionnez vous sur la branche `etape-2bis`.
 
 Enrichir le composant de vue des artistes avec l'image de la pochette.
 

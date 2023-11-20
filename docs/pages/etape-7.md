@@ -143,7 +143,7 @@ function App() {
 
 # Objectif
 
-Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartie d'une base saine, positionnez vous sur la branche `etape-6`.
+Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartir d'une base saine, positionnez vous sur la branche `etape-6`.
 
 Autoriser l'utilisateur à sauvegarder ses albums favoris.
 
