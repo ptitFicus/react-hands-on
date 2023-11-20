@@ -52,6 +52,9 @@ function Layout() {
             <li>
               <Link to="/">search</Link>
             </li>
+            <li>
+              <Link to="/favorites">favorites</Link>
+            </li>
           </ul>
         </nav>
       </header>
