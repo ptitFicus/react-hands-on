@@ -45,12 +45,12 @@ Comme JSX n'est qu'une extension du langage JavaScript, de nombreuses mécanique
 
 Par exemple il est possible d'utiliser l'opérateur ternaire pour faire de l'affichage conditionnel : `{user === "Admin" ? "Welcome admin !!!" : "Welcome"}`.
 
-Il est également possible d'utiliser l'opérateur `&&` pour n'afficher quelque chose que si une variable / expression est "truthy" : `{user === "Admin" && "Current user is admin"}`.
+Il est également possible d'utiliser l'opérateur `&&` pour n'afficher quelque chose que si une variable / expression est ["truthy"](https://developer.mozilla.org/fr/docs/Glossary/Truthy) : `{user === "Admin" && "Current user is admin"}`.
 
-Au sein de ces expressions, il est possible de rendre non pas des chaîne de caractère mais des éléments JSX : `{user === "Admin" && <button>Delete application</button>}`.
+Au sein de ces expressions, il est possible de rendre non seulement des chaîne de caractère mais aussi des éléments JSX : `{user === "Admin" && <button>Delete application</button>}`.
 
 On peut également utiliser les méthodes JS habituelles de parcours des tableaux (map, filter, reduce). L'utilisation de map permet par exemple d'afficher un élément JSX pour chaque élément du tableau.
-Lorsque l'on fait des itérations de ce genre, il est nécessaire pour chaque élément rendu de lui attribuer une propriété "key" qui doit être unique au sein du composant.
+Lorsque l'on fait des itérations de ce genre, il est nécessaire pour chaque élément rendu de lui attribuer une propriété ["key"](https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key) qui doit être unique au sein du composant.
 
 Pour plus de détails sur le JSX et sa syntaxe, visitez les pages suivantes :
 
