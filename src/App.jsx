@@ -1,5 +1,4 @@
 import logo from "./assets/logo.jpg";
-import { ArtistTable } from "./components/ArtistTable";
 import "./App.css";
 
 export const App = () => {
@@ -25,9 +24,7 @@ export const App = () => {
           </ul>
         </nav>
       </header>
-      <main>
-        <ArtistTable />
-      </main>
+      <main>{/* TODO */}</main>
     </>
   );
 };
