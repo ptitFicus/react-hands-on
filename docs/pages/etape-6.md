@@ -7,7 +7,16 @@ L'idée est d'ajouter un bouton ouvrant un formulaire permettant de saisir :
 - le nom d'un artiste
 - une liste d'albums (un par ligne dans un textarea)
 
-La fonction `add` du fichier `utils.js` est fournie.
+La fonction `add` du fichier `utils.js` est fournie, elle retourne un promise, voici un exemple d'utilisation :
+
+```js
+import { add } from "../utils/utils";
+
+// ...
+add("Les Beatles", "Let It Be\nAbbey Road")
+  .then(() => console.log("successfully added"))
+  .catch((err) => console.error(err));
+```
 
 Le service de récupération des images de pochette est bouchonné (pour des raisons de quota de requête et de compatibilité avec le réseau interne), il n'y a donc que quelques groupes qui fonctionnent en ajout (vous n'êtes pas obligé d'ajouter tous les albums) :
 
@@ -57,6 +66,10 @@ Le service de récupération des images de pochette est bouchonné (pour des rai
   - Sortir de l'ordinaire
   - Ton invitation
   - Tu dis rien
+
+## Résultat attendu
+
+![resultat-etape-6](../assets/img/resultat-etape-6.gif)
 
 ## Bonus
 
