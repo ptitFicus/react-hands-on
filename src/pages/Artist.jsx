@@ -18,17 +18,19 @@ export function Artist() {
           flexWrap: "wrap",
         }}
       >
-        {artist.albums.map((title) => (
-          <div key={title}>
-            <h2>{title}</h2>
-            <Cover
-              key={title}
-              album={title}
-              artist={artist.name}
-              size="medium"
-            />
-          </div>
-        ))}
+        {artist.albums.length === 0
+          ? "No album to display"
+          : artist.albums.map((title) => (
+              <div key={title}>
+                <h2>{title}</h2>
+                <Cover
+                  key={title}
+                  album={title}
+                  artist={artist.name}
+                  size="medium"
+                />
+              </div>
+            ))}
       </div>
     </>
   );
