@@ -91,6 +91,10 @@ L'objectif de cette étape est de mettre en place un router dans l'application a
 
 Cette nouvelle page doit être accessible au clic sur le nom de l'artiste dans le tableau.
 
+## Résultat attendu
+
+![resultat-etape-2-bis](../assets/img/resultat-etape-2-bis.gif)
+
 ## Bonus
 
 - Refactoriser le code pour faire en sorte de ne pas devoir redéclarer le Layout (topbar) dans chaque page (en utilisant les routes "children" et l'Outlet)
