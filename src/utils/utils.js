@@ -1,4 +1,5 @@
 import withAlbums from "./data/data.json";
+import artists from "./data/Artist.json";
 
 export function search(text) {
   const upper = text?.toUpperCase();
@@ -42,19 +43,36 @@ export function add(artist, albums) {
 
 const BLACKLIST = ["The Beatles", "The Cure", "Louise Attaque"];
 
-export const artistsWithAlbums = () =>
-  Object.values(
-    withAlbums
-      .filter(({ name }) => !BLACKLIST.includes(name))
-      .reduce((acc, { name, album }) => {
-        if (acc[name]) {
-          acc[name].albums.push(album);
-        } else {
-          acc[name] = { name, albums: [album] };
-        }
-        return acc;
-      }, {})
-  ).concat(readAddedData());
+export const artistsWithAlbums = () => {
+  const aggregation = withAlbums
+    .filter(({ name }) => !BLACKLIST.includes(name))
+    .reduce((acc, { name, album }) => {
+      if (acc[name]) {
+        acc[name].albums.push(album);
+      } else {
+        acc[name] = { name, albums: [album] };
+      }
+      return acc;
+    }, {});
+
+  artists.forEach(({ Name }) => {
+    if (!aggregation[Name]) {
+      aggregation[Name] = { name: Name, albums: [] };
+    }
+  });
+
+  return Object.values(aggregation)
+    .concat(readAddedData())
+    .sort((a1, a2) => {
+      if (a1.name > a2.name) {
+        return 1;
+      } else if (a1.name < a2.name) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+};
 
 export function fetchCoverImage(artist, album, size) {
   return new Promise((resolve, reject) => {
