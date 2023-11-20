@@ -126,9 +126,9 @@ function MonAutreSuperComponent() {
 }
 ```
 
-# Etape 1
+# Objectif
 
-Réaliser le même tableau que précédemment à l'aide de React.
+Positionnez vous sur la branche `etape-1-debut`, puis réaliser le même tableau que précédemment à l'aide de React (cette fois-ci dans le fichier App.jsx).
 
 ## Bonus
 

@@ -73,7 +73,33 @@ L'interface `Document` est présentée sur [mdn web docs](https://developer.mozi
 
 # Objectif
 
+## Lancer l'application
+
+Pour récupérer le code source de l'application, il est nécessaire de cloner le repo github :
+
+```sh
+git clone git@github.com:ptitFicus/react-hands-on.git
+cd react-hands-on
+```
+
+Puis pour vous positionner au début de la première étape :
+
+```sh
+git checkout etape-0
+```
+
+Installer ensuite les dépendances puis lancer l'application :
+
+```sh
+npm i
+npm run dev
+```
+
+## Objectif
+
 A l'aide de la fonction `artistsWithAlbum` du fichier `utils.js`, créer une page qui crée un tableau comprenant tous les artistes, et pour chaque artiste la liste de ses albums.
+
+Le code de cette étape est à réaliser dans le fichier `main.jsx`.
 
 ```html
 <table>

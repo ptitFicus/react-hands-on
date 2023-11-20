@@ -85,6 +85,8 @@ function Room() {
 
 # Objectif
 
+Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartie d'une base saine, positionnez vous sur la branche `etape-2`.
+
 L'objectif de cette étape est de mettre en place un router dans l'application afin de déplacer la vue détaillée des artistes sur une nouvelle page.
 
 Cette nouvelle page doit être accessible au clic sur le nom de l'artiste dans le tableau.

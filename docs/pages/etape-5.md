@@ -1,5 +1,7 @@
 # Recherche asynchrone
 
+Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartie d'une base saine, positionnez vous sur la branche `etape-4`.
+
 On cherche à charger les artistes comme s'ils venaient d'un serveur distant.
 La fonction `search` du fichier `utils.js` réalise la recherche.
 

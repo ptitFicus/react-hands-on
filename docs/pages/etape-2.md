@@ -136,7 +136,9 @@ export default function Form() {
 }
 ```
 
-# Etape 2
+# Objectif
+
+Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartie d'une base saine, positionnez vous sur la branche `etape-1`.
 
 Ajouter une troisième colonne au tableau. Elle comprend un bouton `Display` permettant d'afficher le détail d'un artiste : son nom et la liste de ses albums.
 Lorsqu'un artiste est affiché, un bouton permet de fermer le détail.

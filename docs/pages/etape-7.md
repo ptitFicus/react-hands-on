@@ -143,6 +143,8 @@ function App() {
 
 # Objectif
 
+Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartie d'une base saine, positionnez vous sur la branche `etape-6`.
+
 Autoriser l'utilisateur à sauvegarder ses albums favoris.
 
 Le fait qu'un album soit parmis les favoris est matérialisé par une petite étoile colorée sur la couverture de l'album, l'étoile est vide si l'album n'est pas favoris.
