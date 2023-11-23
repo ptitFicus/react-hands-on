@@ -67,6 +67,8 @@ Le service de récupération des images de pochette est bouchonné (pour des rai
   - Ton invitation
   - Tu dis rien
 
+La fonction `add` stocke en réalité les artistes ajoutés dans le localStorage, pour "repartir de 0", il suffit donc d'ouvrir l'onglet "storage" des devtools (dans firefox) ou "application" (dans chrome) et de supprimer les valeurs stockées dans le localStorage.
+
 ## Résultat attendu
 
 ![resultat-etape-6](../assets/img/resultat-etape-6.gif)
