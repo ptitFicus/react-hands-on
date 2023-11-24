@@ -1,6 +1,7 @@
 - Hand's on
   - [Javascript - les bases](./pages/javascript.md)
   - [Etape 0](./pages/etape-0.md)
+  - [JSX - les bases](./pages/jsx.md)
   - [Etape 1](./pages/etape-1.md)
   - [Etape 2](./pages/etape-2.md)
   - [Etape 2 bis](./pages/etape-2bis.md)
