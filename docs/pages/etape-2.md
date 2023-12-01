@@ -79,11 +79,11 @@ useState est un Hook React qui ajoute une variable d’état dans votre composan
 
 ### Aparté sur les hooks
 
-useState est le premier hook que nous rencontrons, nuos en croiserons quelques autres par la suite. Les hooks sont des fonctions permettant de conserver un état local dans un composant, d'exécuter des actions au changement de certaines props, ...
+useState est le premier hook que nous rencontrons, nous en croiserons quelques autres par la suite. Les hooks sont des fonctions permettant de conserver un état local dans un composant, d'exécuter des actions au changement de certaines props, ...
 
 Les hooks sont reconnaissables facilement car ils commencent tous par `use`.
 
-Ils peuvent sembler magiques au premier abord (et même aux deuxième et troisièmes abords !), pour l'instant, il vous suffit de savoir que les hooks ne peuvent pas être utilisés n'importe comme, leur utilisation doit satisfaire une règle :
+Ils peuvent sembler magiques au premier abord (et même aux deuxième et troisièmes abords !), pour l'instant, il vous suffit de savoir que les hooks ne peuvent pas être utilisés n'importe comment, leur utilisation doit satisfaire une règle :
 
 > Les hooks doivent être appelés au "top level" (à la racine) des composants (ou des hooks customs) dans lesquels ils sont utilisés.
 

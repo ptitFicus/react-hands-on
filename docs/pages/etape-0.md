@@ -97,7 +97,8 @@ npm run dev
 
 ## Objectif
 
-A l'aide de la fonction `artistsWithAlbum` du fichier `utils/utils.js`, créer une page qui crée un tableau comprenant tous les artistes, et pour chaque artiste la liste de ses albums.
+A l'aide de la fonction `artistsWithAlbum` du fichier `utils/utils.js`, sur la page un tableau comprenant tous les artistes est déjà créé.
+Pour chaque artiste ajouter une colonne indiquant le compte de ses albums en modifiant la fonction `makeTable`.
 
 Le code de cette étape est à réaliser dans le fichier `main.jsx`.
 
@@ -122,7 +123,7 @@ Le code de cette étape est à réaliser dans le fichier `main.jsx`.
 </table>
 ```
 
-Voici un extrait des données rénvoyées par cette fonction :
+Voici un extrait des données rénvoyées par la fonction `artistsWithAlbum` :
 
 ```json
 [
@@ -134,11 +135,9 @@ Voici un extrait des données rénvoyées par cette fonction :
 ]
 ```
 
-Vous pouvez positionner ce tableau comme enfant de la div avec l'id `root`.
-
 ## Bonus
 
-Créer une fonction qui fait un tableau et qui prend en paramètres un tableau de données, et les colonnes du tableau.
+Modifier la fonction `makeTable`, qui fait un tableau et qui prend en paramètres un tableau de données, et les colonnes du tableau en utilisant les concept suivant :
 
 - [destructuration de tableaux](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-- parcours de tableaux
+- [parcours et transformation de tableaux](./javascript.md#manipulation-de-tableaux)

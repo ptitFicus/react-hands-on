@@ -32,7 +32,7 @@ useEffect(() => {
     `J'affiche quelque chose à chaque rendu pour lequel ${variables} a changé`
   );
   return () => {
-    alert("Je fais quelque chose au démontage de mon composant");
+    alert("Je fais quelque chose au démontage de mon composant ou quand le useEffect se redéclenche");
   };
 }, [variables]);
 
@@ -58,7 +58,7 @@ Depuis React 18, les effets sont exécutés deux fois lorsque le composant se mo
 
 ## Promesses
 
-Une promesse est un objet (Promise) qui représente la complétion ou l'échec d'une opération asynchrone. Les promesses sont notamment utilisées pour gérer les appels HTTP(s).
+petit rappel: Une [promesse](./javascript.md#promesses) est un objet (Promise) qui représente la complétion ou l'échec d'une opération asynchrone. Les promesses sont notamment utilisées pour gérer les appels HTTP(s).
 
 ```js
 faireQqc()
@@ -95,9 +95,7 @@ const MyComponent = ({ id }) => {
 
 Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartir d'une base saine, positionnez vous sur la branche `etape-2bis`.
 
-Enrichir le composant de vue des artistes avec l'image de la pochette.
-
-La fonction fetchCoverImage du fichiers utils/utils.js est à utiliser, elle s'appelle de la manière suivante :
+Enrichir le composant de vue des artistes avec l'image de la pochette à l'aide de la fonction fetchCoverImage du fichiers utils/utils.js. Elle retourne une promesse contenant l'image de la pochette et s'appelle de la manière suivante :
 
 ```js
 fetchCoverImage("nom de l'artiste", "nom de l'album", "medium"); // le 3è paramètre peut-être small ou medium en fonction de la taille souhaitée

@@ -13,7 +13,10 @@ Le code écrit en JSX est transformé en JavaScript avant d'être exécuté dans
 
 
 ```jsx
+//code JSX
 const p = <p>Mon paragraphe</p>
+
+//code transpilée en Javascript
 const p = React.createElement('p', null, 'Mon paragraphe');
 ```
 

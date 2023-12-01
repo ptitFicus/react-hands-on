@@ -17,7 +17,7 @@ const substract = (number1, number2) => {
 
 // La syntaxe à base de const a une version abbrégée si la fonction ne fait qu'une ligne
 
-const multiply = (number1, number2) => number1 * number2; // pas besoin de return !
+const multiply = (number1, number2) => number1 * number2; // pas besoin d'accolades ni de return !
 ```
 
 Dans ce hand's on, on peut utiliser les deux syntaxe de manière interchangeable.
@@ -328,10 +328,52 @@ console.log(obj?.unAutreObjet?.d?.c); // undefined
 
 ### Autres opérateurs
 
-Il existe de nombreux autres opérateurs en JavaScript, qui seront moins utiles dans le cadre de ce workshope.
+Il existe de nombreux autres opérateurs en JavaScript, qui seront moins utiles dans le cadre de ce workshop.
 
 Si vous rencontrez l'un d'eux et voulez connaître sa signification, [ce site est très utile](https://www.joshwcomeau.com/operator-lookup/)
 
 ## Promesses
 
-TODO
+L'objet `Promise` (pour « promesse ») est utilisé pour réaliser des traitements de façon asynchrone. Une promesse représente une valeur qui peut être disponible maintenant, dans le futur voire jamais.
+
+```js
+const maPromesse = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("toto"); //la promesse resolue renvoie la chaine de charactère 'toto'
+  }, 300);
+});
+```
+
+L'interface `Promise` représente un intermédiaire vers une valeur qui n'est pas nécessairement connue au moment de la création de la promesse. Tant qu'elle n'est pas consommée, elle peut se trouver dans 3 états :
+- *pending*,  c'est l'etat initial, l'operation est *en attente*.
+- *fullfilled*, la promesse est *tenue*, l'opération est réussie
+- *rejected*, la promesse est *rompue*, l'opération à échouée
+
+Pour consommer une promesse, l'interface vous met a disposition les methodes `then` et `catch`, la première dans le cas ou la promesse est tenue, la seconde si elle a échouée.
+
+```js
+const maPromesse = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("toto"); 
+  }, 300);
+});
+
+maPromesse
+  .then(response => console.log(response)) //log de 'toto'
+
+```
+
+Ces 2 méthodes renvoient des promesses, ce qui vous permettra de chainer des promesses.
+
+```js
+const maPromesse = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("toto"); 
+  }, 300);
+});
+
+maPromesse
+  .then(response => response.toUpperCase())
+  .then(response => console.log(response)) //log de 'TOTO'
+  .catch(error => console.error(error)) //log de l'erreur si echec de la promesse
+```
