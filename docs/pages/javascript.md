@@ -1,4 +1,4 @@
-# Javactipt : les bases pour ce hand's on
+# Javascript : les bases pour ce hand's on
 
 Cette page n'a pas vocation à couvrir tout l'apprentissage de JavaScript, mais à vous donner les bases dont vous aurez besoin pour ce workshop.
 
