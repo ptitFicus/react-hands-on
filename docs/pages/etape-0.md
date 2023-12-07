@@ -82,16 +82,21 @@ git clone https://github.com/ptitFicus/react-hands-on.git
 cd react-hands-on
 ```
 
+Installer ensuite les dépendances
+
+```sh
+npm i
+```
+
 Puis pour vous positionner au début de la première étape :
 
 ```sh
 git checkout etape-0
 ```
 
-Installer ensuite les dépendances puis lancer l'application :
+Lancer l'application :
 
 ```sh
-npm i
 npm run dev
 ```
 
