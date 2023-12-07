@@ -78,7 +78,7 @@ L'interface `Document` est présentée sur [mdn web docs](https://developer.mozi
 Pour récupérer le code source de l'application, il est nécessaire de cloner le repo github :
 
 ```sh
-git clone git@github.com:ptitFicus/react-hands-on.git
+git clone https://github.com/ptitFicus/react-hands-on.git
 cd react-hands-on
 ```
 
