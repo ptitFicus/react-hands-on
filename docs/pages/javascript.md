@@ -89,6 +89,16 @@ const array = [1, 2, 3];
 
 const result = array.map((value) => value + 1); // [2,3,4]
 // le tableau contenu dans "array" n'a pas été modifié
+
+// Il est également possible d'utiliser une fonction de plusieurs lignes
+const anotherResult = array.map((value) => {
+  if (value > 1) {
+    // Si la valeur est paire
+    return value + 1;
+  } else {
+    return value;
+  }
+}); // [1, 3,4]
 ```
 
 ### filter
@@ -345,22 +355,21 @@ const maPromesse = new Promise((resolve, reject) => {
 ```
 
 L'interface `Promise` représente un intermédiaire vers une valeur qui n'est pas nécessairement connue au moment de la création de la promesse. Tant qu'elle n'est pas consommée, elle peut se trouver dans 3 états :
-- *pending*,  c'est l'etat initial, l'operation est *en attente*.
-- *fullfilled*, la promesse est *tenue*, l'opération est réussie
-- *rejected*, la promesse est *rompue*, l'opération à échouée
+
+- _pending_, c'est l'etat initial, l'operation est _en attente_.
+- _fullfilled_, la promesse est _tenue_, l'opération est réussie
+- _rejected_, la promesse est _rompue_, l'opération à échouée
 
 Pour consommer une promesse, l'interface vous met a disposition les methodes `then` et `catch`, la première dans le cas ou la promesse est tenue, la seconde si elle a échouée.
 
 ```js
 const maPromesse = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve("toto"); 
+    resolve("toto");
   }, 300);
 });
 
-maPromesse
-  .then(response => console.log(response)) //log de 'toto'
-
+maPromesse.then((response) => console.log(response)); //log de 'toto'
 ```
 
 Ces 2 méthodes renvoient des promesses, ce qui vous permettra de chainer des promesses.
@@ -368,12 +377,12 @@ Ces 2 méthodes renvoient des promesses, ce qui vous permettra de chainer des pr
 ```js
 const maPromesse = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve("toto"); 
+    resolve("toto");
   }, 300);
 });
 
 maPromesse
-  .then(response => response.toUpperCase())
-  .then(response => console.log(response)) //log de 'TOTO'
-  .catch(error => console.error(error)) //log de l'erreur si echec de la promesse
+  .then((response) => response.toUpperCase())
+  .then((response) => console.log(response)) //log de 'TOTO'
+  .catch((error) => console.error(error)); //log de l'erreur si echec de la promesse
 ```
