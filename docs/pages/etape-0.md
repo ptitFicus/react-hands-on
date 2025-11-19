@@ -91,7 +91,7 @@ npm i
 Puis pour vous positionner au début de la première étape :
 
 ```sh
-git checkout etape-0
+git checkout etape-0-debut
 ```
 
 Lancer l'application :
@@ -102,17 +102,19 @@ npm run dev
 
 ## Objectif
 
-A l'aide de la fonction `artistsWithAlbum` du fichier `utils/utils.js`, sur la page un tableau comprenant tous les artistes est déjà créé.
-Pour chaque artiste ajouter une colonne indiquant le compte de ses albums en modifiant la fonction `makeTable`.
+En vous inspirant du code déjà présent dans le fichier `main.jsx`, complétez le tableau affiché afin qu'il contienne sur chaque ligne :
 
-Le code de cette étape est à réaliser dans le fichier `main.jsx`.
+- le nom d'un artiste
+- le nombre d'albums de cet artiste
+
+Voici un exemple de html à générer :
 
 ```html
 <table>
   <thead>
     <tr>
-      <td>Artist (2)</td>
-      <td>Albums</td>
+      <td>Artists</td>
+      <td>Album count</td>
     </tr>
   </thead>
   <tbody>
@@ -128,7 +130,7 @@ Le code de cette étape est à réaliser dans le fichier `main.jsx`.
 </table>
 ```
 
-Voici un extrait des données rénvoyées par la fonction `artistsWithAlbum` :
+Voici un extrait des données présentes dans la variable `artists` (n'hésitez pas à afficher son contenu à l'aide de `console.log`) :
 
 ```json
 [
@@ -142,7 +144,10 @@ Voici un extrait des données rénvoyées par la fonction `artistsWithAlbum` :
 
 ## Bonus
 
-Modifier la fonction `makeTable`, qui fait un tableau et qui prend en paramètres un tableau de données, et les colonnes du tableau en utilisant les concept suivant :
+Refactorer le code pour créer une fonction générique `makeTable`, qui génère un tableau html à partir de deux paramètres :
 
-- [destructuration de tableaux](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-- [parcours et transformation de tableaux](./javascript.md#manipulation-de-tableaux)
+- un liste de données
+- une liste de colonnes
+
+* [destructuration de tableaux](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+* [parcours et transformation de tableaux](./javascript.md#manipulation-de-tableaux)
