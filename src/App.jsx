@@ -1,7 +1,9 @@
 import logo from "./assets/logo.jpg";
 import { ArtistTable } from "./components/ArtistTable";
 import "./App.css";
+import { artistsWithAlbums } from "./utils/utils";
 
+const artists = artistsWithAlbums();
 export const App = () => {
   return (
     <>
@@ -26,7 +28,7 @@ export const App = () => {
         </nav>
       </header>
       <main>
-        <ArtistTable />
+        <ArtistTable artists={artists} />
       </main>
     </>
   );

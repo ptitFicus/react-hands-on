@@ -1,22 +1,24 @@
-import { artistsWithAlbums } from "../utils/utils.js";
+import React from "react";
 
-export const ArtistTable = () => {
+export function ArtistTable({ artists }) {
   return (
     <table>
       <thead>
         <tr>
-          <td>Artist ({artistsWithAlbums().length})</td>
-          <td>Albums</td>
+          <th>Artist ({artists.length})</th>
+          <th>Albums</th>
         </tr>
       </thead>
       <tbody>
-        {artistsWithAlbums()?.map((artist) => (
-          <tr key={artist.name}>
-            <td>{artist.name}</td>
-            <td>{artist.albums.length ? artist.albums.length : "No Albums"}</td>
-          </tr>
-        ))}
+        {artists.map(({ name, albums }) => {
+          return (
+            <tr key={name}>
+              <td>{name}</td>
+              <td>{albums.length === 0 ? "No albums" : albums.length}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
-};
+}
