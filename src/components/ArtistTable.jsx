@@ -1,29 +1,30 @@
 import { shape, arrayOf, string, array, func } from "prop-types";
 
-export const ArtistTable = ({ artists, onArtistSelection }) => {
+export function ArtistTable({ artists, onDisplay }) {
   return (
     <table>
       <thead>
         <tr>
-          <td>Artist ({artists.length})</td>
-          <td>Albums</td>
-          <td>Actions</td>
+          <th>Artist ({artists.length})</th>
+          <th colSpan={2}>Albums</th>
         </tr>
       </thead>
       <tbody>
-        {artists?.map((artist) => (
-          <tr key={artist.name}>
-            <td>{artist.name}</td>
-            <td>{artist.albums.length ? artist.albums.length : "No Albums"}</td>
-            <td>
-              <button onClick={() => onArtistSelection(artist)}>Détails</button>
-            </td>
-          </tr>
-        ))}
+        {artists.map(({ name, albums }) => {
+          return (
+            <tr key={name}>
+              <td>{name}</td>
+              <td>{albums.length === 0 ? "No albums" : albums.length}</td>
+              <td>
+                <button onClick={() => onDisplay(name)}>Display</button>
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
-};
+}
 
 ArtistTable.propTypes = {
   artists: arrayOf(

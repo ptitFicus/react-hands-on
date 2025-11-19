@@ -1,15 +1,13 @@
-import { useState } from "react";
-
 import logo from "./assets/logo.jpg";
-import "./App.css";
 import { ArtistTable } from "./components/ArtistTable";
-import { ArtistDetail } from "./components/ArtistDetail";
-import { artistsWithAlbums } from "./utils/utils.js";
+import "./App.css";
+import { artistsWithAlbums } from "./utils/utils";
+import { useState } from "react";
+import { AlbumDisplay } from "./components/AlbumDisplay";
 
+const artists = artistsWithAlbums();
 export const App = () => {
-  const [artist, setArtist] = useState();
-
-  const [filter, setFilter] = useState();
+  const [displayedArtist, setDisplayedArtist] = useState(undefined);
 
   return (
     <>
@@ -34,27 +32,20 @@ export const App = () => {
         </nav>
       </header>
       <main>
-        {artist && (
-          <>
-            <ArtistDetail artist={artist} />
-            <button onClick={() => setArtist(undefined)}>Close</button>
-          </>
+        {displayedArtist && (
+          <div>
+            <AlbumDisplay
+              artist={displayedArtist}
+              albums={
+                artists.find((a) => a.name === displayedArtist)?.albums ?? []
+              }
+            />
+            <button onClick={() => setDisplayedArtist(undefined)}>Close</button>
+          </div>
         )}
-        <input
-          placeholder="Filtrez"
-          onChange={(e) => {
-            setFilter(e.target.value.toUpperCase());
-          }}
-        />
         <ArtistTable
-          artists={
-            (filter &&
-              artistsWithAlbums().filter((a) =>
-                a.name.toUpperCase().includes(filter)
-              )) ||
-            artistsWithAlbums()
-          }
-          onArtistSelection={(value) => setArtist(value)}
+          artists={artists}
+          onDisplay={(name) => setDisplayedArtist(name)}
         />
       </main>
     </>

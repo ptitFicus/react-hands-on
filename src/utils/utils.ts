@@ -1,7 +1,7 @@
 import withAlbums from "./data/data.json";
 import artists from "./data/Artist.json";
 
-export function search(text) {
+export function search(text: string) {
   const upper = text?.toUpperCase();
   return new Promise((resolve) => {
     if (!text || text?.length === 0) {
@@ -22,7 +22,7 @@ function readAddedData() {
   return readed ? JSON.parse(readed) : [];
 }
 
-export function add(artist, albums) {
+export function add(artist: string, albums: string[]) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (
@@ -53,7 +53,7 @@ export const artistsWithAlbums = () => {
         acc[name] = { name, albums: [album] };
       }
       return acc;
-    }, {});
+    }, {} as { [x: string]: { name: string; albums: string[] } });
 
   artists.forEach(({ Name }) => {
     if (!aggregation[Name]) {
@@ -74,7 +74,11 @@ export const artistsWithAlbums = () => {
     });
 };
 
-export function fetchCoverImage(artist, album, size) {
+export function fetchCoverImage(
+  artist: string,
+  album: string,
+  size: "medium" | "small"
+) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (
@@ -95,7 +99,7 @@ export function fetchCoverImage(artist, album, size) {
   });
 }
 
-function getRandomInt(min, max) {
+function getRandomInt(min: number, max: number) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
