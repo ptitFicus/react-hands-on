@@ -30,37 +30,41 @@ const makeHeader = () => {
 };
 
 const rootDiv = document.getElementById("root");
-
-const makeTable = (data, columns = []) => {
-  const table = document.createElement("table");
-  const head = document.createElement("thead");
-  const trHead = document.createElement("tr");
-
-  columns.forEach((col) => {
-    const tdHead = document.createElement("td");
-    tdHead.innerText = col;
-    trHead.appendChild(tdHead);
-  });
-
-  head.appendChild(trHead);
-  table.appendChild(head);
-
-  data.forEach((artist) => {
-    const tr = document.createElement("tr");
-    columns.forEach((col) => {
-      const td = document.createElement("td");
-      td.innerText = artist[col];
-      tr.appendChild(td);
-    });
-    table.appendChild(tr);
-  });
-
-  return table;
-};
-
 const main = document.createElement("main");
-
-main.appendChild(makeTable(artistsWithAlbums(), ["name"]));
-
 rootDiv.appendChild(makeHeader());
+
+const artists = artistsWithAlbums();
+
+const table = document.createElement("table");
+
+// Table header
+const header = document.createElement("thead");
+const artistHeader = document.createElement("th");
+artistHeader.innerText = `Artists (${artists.length})`;
+header.appendChild(artistHeader);
+
+const albumCountHeader = document.createElement("th");
+albumCountHeader.innerText = `Album count`;
+header.appendChild(albumCountHeader);
+
+table.appendChild(header);
+
+// Table body
+const tbody = document.createElement("tbody");
+artists.forEach(({ name, albums }) => {
+  const row = document.createElement("tr");
+
+  const nameCell = document.createElement("td");
+  nameCell.textContent = name;
+  row.appendChild(nameCell);
+
+  const countCell = document.createElement("td");
+  countCell.textContent = albums.length === 0 ? "No albums" : albums.length;
+  row.appendChild(countCell);
+
+  tbody.appendChild(row);
+});
+
+table.appendChild(tbody);
+main.appendChild(table);
 rootDiv.appendChild(main);
