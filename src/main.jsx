@@ -6,14 +6,14 @@ const rootDiv = document.getElementById("root");
 
 const main = document.createElement("main");
 
-const artistWithAlbums = artistsWithAlbums(artist);
+const artists = artistsWithAlbums(artist);
 
 const table = document.createElement("table");
 
 // Table header
 const header = document.createElement("thead");
 const artistHeader = document.createElement("th");
-artistHeader.innerText = `Artists (${artistWithAlbums.length})`;
+artistHeader.innerText = "Artists";
 header.appendChild(artistHeader);
 
 const albumCountHeader = document.createElement("th");
