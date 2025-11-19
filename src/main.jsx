@@ -12,14 +12,17 @@ const table = document.createElement("table");
 
 // Table header
 const header = document.createElement("thead");
+const headerRow = document.createElement("tr");
+
 const artistHeader = document.createElement("th");
 artistHeader.innerText = "Artists";
-header.appendChild(artistHeader);
+headerRow.appendChild(artistHeader);
 
 const albumCountHeader = document.createElement("th");
 albumCountHeader.innerText = `Album count`;
-header.appendChild(albumCountHeader);
+headerRow.append(albumCountHeader);
 
+header.appendChild(headerRow);
 table.appendChild(header);
 
 // Table body
