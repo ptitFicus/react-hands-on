@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchCoverImage } from "../utils/utils";
 
-export function AlbumDisplay({ artist, albums }) {
+export function ArtistDetails({ artist, albums }) {
   return (
     <div>
       <h1>{artist}</h1>
@@ -20,6 +20,7 @@ export function AlbumDisplay({ artist, albums }) {
           <>
             {albums.map((a) => (
               <div key={a}>
+                <h2>{a}</h2>
                 <Cover artist={artist} name={a} />
               </div>
             ))}
@@ -36,7 +37,6 @@ function Cover({ artist, name }) {
   useEffect(() => {
     fetchCoverImage(artist, name, "medium")
       .then((url) => {
-        console.log("url", url);
         setLoadStatus({ status: "loaded", url: url });
       })
       .catch((err) => {
@@ -49,12 +49,7 @@ function Cover({ artist, name }) {
       return <div className="loader" />;
     }
     case "loaded": {
-      return (
-        <div>
-          <h2>{name}</h2>
-          <img src={loadStatus.url} />
-        </div>
-      );
+      return <img src={loadStatus.url} />;
     }
     case "failed": {
       return <div>Failed to load cover</div>;
