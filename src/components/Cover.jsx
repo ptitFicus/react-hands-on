@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchCoverImage } from "../utils/utils";
+import { string, oneOf } from "prop-types";
 
 export function Cover({ artist, album, size }) {
   const [loadStatus, setLoadStatus] = useState({ status: "loading" });
