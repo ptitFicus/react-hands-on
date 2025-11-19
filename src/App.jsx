@@ -1,14 +1,9 @@
-import "./App.css";
-import {
-  Outlet,
-  RouterProvider,
-  createBrowserRouter,
-  Link,
-} from "react-router-dom";
-
 import logo from "./assets/logo.jpg";
-import { Search } from "./pages/Search";
+import "./App.css";
 import { Artist } from "./pages/Artist";
+import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
+import { Artists } from "./pages/Artists";
+import { Link } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -16,23 +11,24 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/",
-        element: <Search />,
+        path: "/artists/:name",
+        element: <Artist />,
+        errorElement: <div>This artist does not exist</div>,
       },
-      { path: "/artist/:artistId", element: <Artist /> },
       {
-        path: "/favorites",
-        element: <>TODO ;)</>,
+        path: "/",
+        element: <Artists />,
       },
     ],
+    errorElement: <div>Not found</div>,
   },
 ]);
 
-export const App = () => {
+export function App() {
   return <RouterProvider router={router} />;
-};
+}
 
-function Layout() {
+export function Layout() {
   return (
     <>
       <header>

@@ -1,28 +1,30 @@
-import { string, arrayOf, shape } from "prop-types";
+import { shape, arrayOf, string, array, func } from "prop-types";
 import { Link } from "react-router-dom";
 
-export const ArtistTable = ({ artists }) => {
+export function ArtistTable({ artists }) {
   return (
     <table>
       <thead>
         <tr>
-          <td>Artist ({artists.length})</td>
-          <td>Nombre d'albums</td>
+          <th>Artist ({artists.length})</th>
+          <th>Albums</th>
         </tr>
       </thead>
       <tbody>
-        {artists?.map((a) => (
-          <tr key={a.name}>
-            <th>
-              <Link to={`/artist/${encodeURIComponent(a.name)}`}>{a.name}</Link>
-            </th>
-            <td>{a.albums.length > 0 ? a.albums.length : "No albums"}</td>
-          </tr>
-        ))}
+        {artists.map(({ name, albums }) => {
+          return (
+            <tr key={name}>
+              <td>
+                <Link to={`/artists/${encodeURIComponent(name)}`}>{name}</Link>
+              </td>
+              <td>{albums.length === 0 ? "No albums" : albums.length}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
-};
+}
 
 ArtistTable.propTypes = {
   artists: arrayOf(
