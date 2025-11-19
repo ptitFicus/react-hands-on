@@ -32,7 +32,9 @@ useEffect(() => {
     `J'affiche quelque chose à chaque rendu pour lequel ${variables} a changé`
   );
   return () => {
-    alert("Je fais quelque chose au démontage de mon composant ou quand le useEffect se redéclenche");
+    alert(
+      "Je fais quelque chose au démontage de mon composant ou quand le useEffect se redéclenche"
+    );
   };
 }, [variables]);
 
@@ -95,11 +97,13 @@ const MyComponent = ({ id }) => {
 
 Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartir d'une base saine, positionnez vous sur la branche `etape-2bis`.
 
-Enrichir le composant de vue des artistes avec l'image de la pochette à l'aide de la fonction fetchCoverImage du fichiers utils/utils.js. Elle retourne une promesse contenant l'image de la pochette et s'appelle de la manière suivante :
+Enrichir le composant de vue des artistes avec l'image de la pochette à l'aide de la fonction fetchCoverImage du fichiers utils/utils.js. Elle retourne une promesse contenant l'url de l'image de la pochette et s'appelle de la manière suivante :
 
 ```js
 fetchCoverImage("nom de l'artiste", "nom de l'album", "medium"); // le 3è paramètre peut-être small ou medium en fonction de la taille souhaitée
 ```
+
+💡 Pour ne pas galérer en manipulant plusieurs promises en parallèle, il pourrait être judicieux de créer un composant dédié aux albums...
 
 ## Résultat attendu
 
