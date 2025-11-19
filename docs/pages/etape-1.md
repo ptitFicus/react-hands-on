@@ -1,6 +1,6 @@
 # React
 
-React (aussi appelé React.js ou ReactJS) est une bibliothèque JavaScript libre développée par Facebook (maintenant Meta) depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page (ou portion) HTML à chaque changement d'état.
+React (aussi appelé React.js ou ReactJS) est une bibliothèque JavaScript libre développée par Facebook (maintenant Meta) de 2013 à 2025. Depuis Octobre 2025, React est développé et maintenu par une fonction indépendante dédiée. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page (ou portion) HTML à chaque changement d'état.
 
 ## Virtual DOM
 
