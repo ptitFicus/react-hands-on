@@ -1,7 +1,9 @@
 import withAlbums from "./data/data.json";
 import artists from "./data/Artist.json";
 
-export function search(text: string) {
+export function search(
+  text: string
+): Promise<{ name: string; albums: string[] }[]> {
   const upper = text?.toUpperCase();
   return new Promise((resolve) => {
     if (!text || text?.length === 0) {
