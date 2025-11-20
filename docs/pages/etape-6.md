@@ -1,8 +1,9 @@
 # Ajout d'un artiste
 
-Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartir d'une base saine, positionnez vous sur la branche `etape-5`.
+Si vous n'avez pas eu le temps de finaliser l'étape précédente ou souhaitez repartir d'une base saine, positionnez vous sur la branche `etape-5-basique`.
 
 ## Objectif
+
 L'idée est d'ajouter un bouton ouvrant un formulaire permettant de saisir :
 
 - le nom d'un artiste
@@ -20,6 +21,7 @@ add("Les Beatles", "Let It Be\nAbbey Road")
 ```
 
 Le service de récupération des images de pochette est bouchonné (pour des raisons de quota de requête et de compatibilité avec le réseau interne), il >n'y a donc que quelques groupes qui fonctionnent en ajout (vous n'êtes pas obligé d'ajouter tous les albums) :
+
 - The Beatles
   - Let It Be
   - Abbey Road
@@ -67,7 +69,7 @@ Le service de récupération des images de pochette est bouchonné (pour des rai
   - Ton invitation
   - Tu dis rien
 
->La fonction `add` stocke en réalité les artistes ajoutés dans le localStorage, pour "repartir de 0", il suffit donc d'ouvrir l'onglet "storage" des devtools (dans firefox) ou "application" (dans chrome) et de supprimer les valeurs stockées dans le localStorage.
+> La fonction `add` stocke en réalité les artistes ajoutés dans le localStorage, pour "repartir de 0", il suffit donc d'ouvrir l'onglet "storage" des devtools (dans firefox) ou "application" (dans chrome) et de supprimer les valeurs stockées dans le localStorage.
 
 ## Résultat attendu
 
