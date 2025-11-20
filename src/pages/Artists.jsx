@@ -1,12 +1,38 @@
-import { artistsWithAlbums } from "../utils/utils";
+import { search } from "../utils/utils";
 import { ArtistTable } from "../components/ArtistTable";
-
-const artists = artistsWithAlbums();
+import { useState } from "react";
+import { debounce } from "lodash";
 
 export function Artists() {
+  const [artistQuery, setArtistQuery] = useState({
+    artists: [],
+    status: "loaded",
+  });
   return (
     <>
-      <ArtistTable artists={artists} />
+      <h2>Search an artist</h2>
+      <input
+        type="text"
+        onChange={debounce((e) => {
+          setArtistQuery({
+            status: "loading",
+          });
+          search(e?.target?.value)
+            .then((as) => setArtistQuery({ status: "loaded", artists: as }))
+            .catch((err) => setArtistQuery({ status: "failed" }));
+        }, 500)}
+      />
+
+      {artistQuery.status === "failed" ? (
+        <div>Failed to search artists</div>
+      ) : artistQuery.status === "loading" ? (
+        <div className="loader" />
+      ) : artistQuery.artists.length === 0 ? (
+        "No artist to display"
+      ) : (
+        <ArtistTable artists={artistQuery.artists} />
+      )}
+      {}
     </>
   );
 }
