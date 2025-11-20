@@ -4,6 +4,7 @@ import { Artist } from "./pages/Artist";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import { Artists } from "./pages/Artists";
 import { Link } from "react-router-dom";
+import { search } from "./utils/utils";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Artists />,
+        loader: async ({ request }) => {
+          const url = new URL(request.url);
+          const query = url.searchParams.get("query");
+
+          return search(query);
+        },
       },
     ],
     errorElement: <div>Not found</div>,
