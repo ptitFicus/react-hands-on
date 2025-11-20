@@ -1,4 +1,3 @@
-import "react";
 import { useParams } from "react-router-dom";
 import { artistsWithAlbums } from "../utils/utils";
 import { Cover } from "../components/Cover";
