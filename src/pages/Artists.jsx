@@ -2,12 +2,14 @@ import { search } from "../utils/utils";
 import { ArtistTable } from "../components/ArtistTable";
 import { useState } from "react";
 import { debounce } from "lodash";
+import { ArtistCreationForm } from "../components/ArtistCreationForm";
 
 export function Artists() {
   const [artistQuery, setArtistQuery] = useState({
     artists: [],
     status: "loaded",
   });
+  const [creatingArtist, setCreatingArtist] = useState(false);
   return (
     <>
       <h2>Search an artist</h2>
@@ -28,11 +30,17 @@ export function Artists() {
       ) : artistQuery.status === "loading" ? (
         <div className="loader" />
       ) : artistQuery.artists.length === 0 ? (
-        "No artist to display"
+        <div>No artist to display</div>
       ) : (
         <ArtistTable artists={artistQuery.artists} />
       )}
-      {}
+      <div>
+        {creatingArtist ? (
+          <ArtistCreationForm close={() => setCreatingArtist(false)} />
+        ) : (
+          <button onClick={() => setCreatingArtist(true)}>Add an artist</button>
+        )}
+      </div>
     </>
   );
 }
