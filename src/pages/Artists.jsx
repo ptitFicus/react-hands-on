@@ -11,16 +11,25 @@ export function Artists() {
   const artists = useLoaderData();
 
   return (
-    <>
-      <h2>Search an artist</h2>
-      <input
-        defaultValue={searchParams.get("query")}
-        type="text"
-        onChange={(e) => {
-          searchParams.set("query", e?.target?.value);
-          setSearchParams(searchParams);
-        }}
-      />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <h2>
+        Search an artist
+        <input
+          defaultValue={searchParams.get("query")}
+          type="text"
+          onChange={(e) => {
+            searchParams.set("query", e?.target?.value);
+            setSearchParams(searchParams);
+          }}
+        />
+      </h2>
 
       {state === "loading" ? (
         <div className="loader" />
@@ -30,6 +39,6 @@ export function Artists() {
         <ArtistTable artists={artists} />
       )}
       {}
-    </>
+    </div>
   );
 }
