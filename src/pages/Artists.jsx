@@ -9,19 +9,28 @@ export function Artists() {
     status: "loaded",
   });
   return (
-    <>
-      <h2>Search an artist</h2>
-      <input
-        type="text"
-        onChange={debounce((e) => {
-          setArtistQuery({
-            status: "loading",
-          });
-          search(e?.target?.value)
-            .then((as) => setArtistQuery({ status: "loaded", artists: as }))
-            .catch((err) => setArtistQuery({ status: "failed" }));
-        }, 500)}
-      />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <h2>
+        Search an artist
+        <input
+          type="text"
+          onChange={debounce((e) => {
+            setArtistQuery({
+              status: "loading",
+            });
+            search(e?.target?.value)
+              .then((as) => setArtistQuery({ status: "loaded", artists: as }))
+              .catch((err) => setArtistQuery({ status: "failed" }));
+          }, 500)}
+        />
+      </h2>
 
       {artistQuery.status === "failed" ? (
         <div>Failed to search artists</div>
@@ -33,6 +42,6 @@ export function Artists() {
         <ArtistTable artists={artistQuery.artists} />
       )}
       {}
-    </>
+    </div>
   );
 }
